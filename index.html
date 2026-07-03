@@ -19,10 +19,11 @@
                 <a href="contact.html">Contact</a>
             </div>
             <div class="contact-button">
-                <button>Contact Me</button>
+                <button onclick="window.location.href='contact.html'">Contact Me</button>
             </div>
         </div>
     </header>
+    
     <section class="introduction">
         <div class="heading">
             <h1>Hi, I'm Abir</h1>
@@ -33,7 +34,26 @@
         <div class="description">
             <p>Welcome to my portfolio! i am a passionate 14 years old developer, still learning programming, but i love to serve people for a little exchange. You can continue exploring the site to learn more about my and you can contach with methrough my email! enjoy!</p>
         </div>  
+        <div class="intro-cards">
+            <article class="card">
+                <h3>14 years old</h3>
+                <p>since 2011</p>
+            </article>
+            <article class="card">
+                <h3>2+ years</h3>
+                <p>of coding experiences</p>
+            </article>
+            <article class="card">
+                <h3>0+</h3>
+                <p>projects completed</p>
+            </article>
+            <article class="card">
+                <h3>0+</h3>
+                <p>trusted partners</p>
+            </article>
+        </div>
     </section>
+    
     <section class="about-me">
         <div class="about-me-heading">
             <h2>About Me</h2>
@@ -43,7 +63,12 @@
         </div>
         <div class="about-me-description">
             <p>I'm a 14-year-old developer with a passion for programming and creating innovative solutions. I enjoy learning new technologies and applying them to real-world projects. My goal is to make a positive impact through my work and continue growing as a developer.</p>
+        </div>
+        <div class="about-button">
+            <button onclick="window.location.href='about.html'">Learn More About Me</button>
+        </div>
     </section>
+    
     <section class="projects">
         <div class="projects-heading">
             <h2>Projects</h2>
@@ -58,6 +83,7 @@
             <a href="https://bhalobashargolpo.netlify.app" target="_blank">Love Story Site (uploaded on 14th Feb, 2025)</a>
         </div>
     </section>
+    
     <section class="contact">
         <div class="contact-heading">
             <h2>Contact Me</h2>
@@ -66,9 +92,15 @@
             <p>If you would like to get in touch with me, please feel free to reach out via email. I am always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
         </div>
         <div class="contact-form">
-            <strong>Form not available yet</strong>
+            <form>
+                <input type="text" name="name" placeholder="Your Name" required><br>
+                <input type="email" name="email" placeholder="Your Email" required><br>
+                <textarea name="message" placeholder="Your Message" required></textarea><br>
+                <button type="submit">Send Message</button>
+            </form>
         </div>
     </section>
+    
     <section class="footer">
         <div class="footer-logo">
             <img src="Icon_Final (no bg and high qual).png" alt="Logo"> A.B.I.R | Beyond Ordinary

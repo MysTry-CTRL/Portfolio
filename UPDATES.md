@@ -24,3 +24,9 @@ This is to note that the chanelogue contains all dates and times in Bangladesh S
 - The Project Section now has text with links for the users to visit.
 - Contact section has been added
 - All new documents, "contact.html", "about.html", "projects.html", "updates.html" and "this-update.html", have the topbar and the footer; for understandability, a text have been added in the center.
+
+- Date: 03.07.2026 | 17:45 Bangladesh Standard Time
+- Contact form was added in index.html and contacts.html.
+- The developer's full profile and description has been added in the about.html.
+- New cards were added in the index.html to show the developer's ability.
+- New button was added in index.html in the "About Me" section.

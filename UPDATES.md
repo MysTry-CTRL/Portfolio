@@ -6,3 +6,11 @@ Welcome to "UPDATES.md"! In this file, you learn about the updates made by the d
 - The website portfolio of Abir Biswas, "A.B.I.R" is being made to this day.
 - The website has a default look and no styles.
 - The site has very few text
+
+#Version 0.0.2 (BETA)
+- Date: 03.07.2026
+- The website now has the cool introduction to learn about the developer.
+- Darkmode support was added with the base html "bgcolor" method.
+- Darkmode extension dark mode is also supported.
+- A footer was added in the document for more connectability
+- You can now read about the developer in the "About Me" section.

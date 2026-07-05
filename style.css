@@ -1,325 +1,881 @@
-html, body{
-    background-color: #000000;
-    color: #FFFFFF;
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
     font-family: 'Montenegrin Gothic One', sans-serif;
-}
-
-.topbar{
     background-color: #000000;
-    color: #FFFFFF;
+    background: radial-gradient(circle at center #1500FF #000000 0.5);
+    color: #ffffff;
+    line-height: 1.7;
+}
+
+/* HEADER SECTION */
+.header {
     display: flex;
-    align-items: center;
+    justify-content: space-between; 
+    align-items: center;            
+    padding: 15px 5%;               
+    background-color: #111111;      
+    width: 100%;
 }
 
-.topbar .logo{
-    flex: 0 0 50px;
-    padding: 10px;
-    height: 50px;
-    width: 50px;
-}
-
-.nav-links{
-    flex: 1;
+.logo {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    align-items: center;  
+    gap: 12px;            
 }
 
-.nav-links a{
-    color: #FFFFFF;
+.logo img {
+    height: 40px;         
+    width: auto;
+    display: block;
+}
+
+.logo-text {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;  
+}
+
+.logo-text-link{
     text-decoration: none;
-    font-size: 18px;
+    color: inherit;
+    display: block;
 }
 
-.nav-links a:hover{
-    color: #0078c3;
+.logo-text-link:hover{
+    transform: translateY(-5px);
 }
 
-.logo img{
-    height: 100px;
-    width: 100px;
-}
-
-.logo img:hover{
-    transform: scale(1.1);
-    transition: transform 0.3s ease;
-}
-
-.contact-button{
-    background-color: #0078c3;
-    color: #0078c3;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.contact-button:hover{
-    background-color: #005fa3;
-    color: #FFFFFF;
-}
-
-.introduction{
-    text-align: justify;
-    margin-top: 50px;
-}
-
-.introduction h1{
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.introduction p{
-    font-size: 18px;
-    line-height: 1.5;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.heading{
-    text-align: center;
-    margin-top: 50px;
-}
-
-.heading h2{
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.subheading{
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.descrition{
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.intro-cards{
+.topbar {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 50px;
+    align-items: center;
+    gap: 30px;                      
+}
+.nav-links {
+    display: flex;
+    gap: 20px;                      
 }
 
-.intro-card{
-    background-color: #1a1a1a;
-    padding: 20px;
-    border-radius: 10px;
-    width: 200px;
-    text-align: center;
-}
 
-.intro-card h3{
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.intro-card p{
+.nav-links a {
+    text-decoration: none;          
+    color: #ffffff;                 
     font-size: 16px;
-    line-height: 1.4;
+    transition: color 0.3s ease;    
 }
 
-.card-container{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 50px;
+.nav-links a:hover {
+    color: #1500FF;                
 }
 
-.card{
-    background-color: #1a1a1a;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
-    text-align: center;
-    padding: 20px;
-    margin: 10px;
-}
-
-.card h3{
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.card p{
-    font-size: 16px;
-    line-height: 1.4;
-}
-
-.about{
-    text-align: center;
-    margin-top: 50px;
-}
-
-.about h2{
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.about p{
-    font-size: 18px;
-    line-height: 1.5;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.about-me{
-    text-align: center;
-    margin-top: 50px;
-}
-
-.about-me-heading{
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.about-me-picture{
-    max-width: 100%;
-    height: auto;
-    margin-top: 20px;
-}
-
-.about-me-description{
-    font-size: 18px;
-    line-height: 1.5;
-    max-width: 600px;
-    margin: 0 auto;
-    margin-top: 20px;
-}
-
-.about-button{
-    background-color: #0078c3;
-    color: #FFFFFF;
-    padding: 10px 20px;
+.contact-button {
+    background-color: #1500FF;      
+    color: #ffffff;                 
     border: none;
-    border-radius: 5px;
+    padding: 10px 20px;
+    border-radius: 5px;             
     cursor: pointer;
+    font-family: 'Montenegrin Gothic One', sans-serif;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
 }
 
-.projects{
-    text-align: center;
-    margin-top: 50px;
+.contact-button:hover {
+    background-color: #0000C8;      
 }
 
-.projects h2{
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.projects p{
-    font-size: 18px;
-    line-height: 1.5;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.projects-heading{
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.projects-description{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 50px;
-}
-
-.project-links{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 50px;
-}
-
-.contact{
-    text-align: center;
-    margin-top: 50px;
-}
-
-.contact h2{
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.contact p{
-    font-size: 18px;
-    line-height: 1.5;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.contact-heading{
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.contact-description{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 50px;
-}
-
-.contact-form{
+/* HERO SECTION */
+.hero{
+    position: relative;
+    min-height: 60vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 50px;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
 
-    border: 1px solid #FFFFFF;
-    border-radius: 10px;
-    background-color: #1a1a1a;
-    filter: drop-shadow(0 0 10px #FFFFFF);
+.hero-content{
+    position:relative;
+    font-size:32px;
+    z-index: 2;
+}
+
+.hero-badge{
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: rgba(21, 0, 255, 0.26);
+    border: 2px solid #1500FF;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* CARDS CONTAINER */
+.intro-cards {
+    display: flex;
+    justify-content: center;   
+    gap: 20px;                 
+    padding: 40px 5%;          
+    flex-wrap: wrap;           
+}
+
+.card {
+    background-color: #111111; 
+    border: 1px solid #222222; 
+    border-radius: 12px;       
+    padding: 25px;
+    flex: 1;                   
+    max-width: 280px;          
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+
+.card:hover {
+    transform: translateY(-5px); 
+    border-color: #1500FF;       
+}
+
+
+.card h3 {
+    color: rgb(0, 149, 255);            
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #b3b3b3;
+}
+
+.card-link {
+    text-decoration: none; 
+    color: inherit;        
+    display: block;        
+}
+
+/* GLOBAL SECTION STYLES */
+.section-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.section-heading {
+    font-size: 32px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-heading::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 4px;
+    background-color: #1500FF;
+    margin-top: 8px;
+    border-radius: 2px;
+}
+
+.section-description {
+    color: #b3b3b3;
+    font-size: 16px;
+    max-width: 700px;
+    margin-bottom: 30px;
+}
+
+/* Universal Button style helper */
+.accent-button {
+    background-color: #1500FF;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.accent-button:hover {
+    background-color: #0000C8;
+    transform: translateY(-2px);
+}
+
+/* --- ABOUT ME SECTION SPECIFICS --- */
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+.about-me-picture img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 2px solid #222222;
+}
+
+.about-me-text {
+    flex: 1;
+}
+
+/* HORIZONTAL ROW LAYOUT FOR DESKTOP */
+.project-grid {
+    display: grid;
+    /* This forces them into a 4-column row on desktop, scaling down dynamically */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 15px;
+    margin-top: 25px;
+    width: 100%;
+}
+
+/* THE SLEEK CARD ITEM */
+.project-card {
+    display: flex;
+    align-items: center;       /* Centers favicon and text vertically on 1 line */
+    gap: 12px;                 /* Space between favicon and text */
+    background-color: #111111;
+    border: 1px solid #222222;
+    border-radius: 8px;
+    padding: 16px 20px;        
+    text-decoration: none;
+    transition: border-color 0.25s ease, transform 0.25s ease, background-color 0.25s ease;
+}
+
+.project-favicon {
+    width: 20px;               
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;            /* Prevents the image from squishing */
+}
+
+.project-name {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: color 0.25s ease;
+    white-space: nowrap;       /* Keeps the text on a single line inside the card */
+    overflow: hidden;
+    text-overflow: ellipsis;   /* Adds '...' if text ever gets too long for the card */
+}
+
+/* INTERACTION ANIMATIONS */
+.project-card:hover {
+    border-color: #1500FF;     
+    background-color: #141414; 
+    transform: translateY(-4px); /* Changed to nudge UP instead of right, looks cleaner in a row grid */
+}
+
+.project-card:hover .project-name {
+    color: #1500FF;            
+}
+
+/* RESPONSIVE DESIGN - STACKS ON MOBILE SCREEN */
+@media (max-width: 600px) {
+    .project-grid {
+        grid-template-columns: 1fr; /* Drops back to single column stack on mobile so it doesn't break */
+    }
+}
+
+/* --- CONTACT SECTION SPECIFICS --- */
+.contact-form-wrapper {
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .contact-form input,
-.contact-form textarea{
-    width: 300px;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
+.contact-form textarea {
+    background-color: #111111;
+    border: 1px solid #222222;
+    border-radius: 6px;
+    padding: 15px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 15px;
+    transition: border-color 0.3s ease;
 }
 
-.contact-form button{
-    background-color: #0078c3;
-    color: #FFFFFF;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.contact-form textarea {
+    min-height: 150px;
+    resize: vertical; /* Allows resizing vertically only */
 }
 
-.footer{
-    background-color: #000000;
-    color: #FFFFFF;
-    text-align: center;
-    padding: 20px;
-    margin-top: 50px;
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #1500FF; /* Focus ring highlights in theme blue */
 }
 
-.footer-logo{
-    height: 50px;
-    width: 50px;
-    margin-bottom: 10px;
+.contact-form button {
+    align-self: flex-start; /* Keeps the form submit button neat and un-stretched */
 }
 
-.footer-link{
-    color: #FFFFFF;
+/* RESPONSIVE DESIGN - TABLETS & PHONES */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .section-heading::after {
+        margin-inline: auto; /* Centers the under-line on mobile devices */
+    }
+    
+    .section-description {
+        margin-inline: auto;
+    }
+    
+    .contact-form button {
+        align-self: stretch; /* Stretches submit button full width on mobile viewports */
+    }
+}
+
+/* FOOTER SECTION */
+.footer {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;        
+    flex-wrap: wrap;                
+    gap: 30px;                      
+    padding: 40px 5%;               
+    background-color: #111111;      
+    width: 100%;
+    margin-top: 50px;               
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;  
+    gap: 12px;            
+}
+
+.footer-logo img {
+    height: 40px;         
+    width: auto;
+    display: block;
+}
+
+.footer-logo-text {
+    color: #ffffff;
+    font-size: 18px;                
+    font-weight: bold;
+    letter-spacing: 1px;  
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;         
+    gap: 12px;                      
+}
+
+.footer-links a {
+    text-decoration: none;          
+    color: #b3b3b3;                 
+    font-size: 15px;
+    transition: color 0.3s ease;    
+}
+
+.footer-links a:hover {
+    color: #1500FF;                 
+}
+
+.footer-right p {
+    color: #666666;                 
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 250px;               
+}
+
+.footer-secret-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 14px;
+}
+
+.footer-secret-links strong {
+    color: #1500FF;                 
+    font-weight: bold;
+}
+
+.footer-secret-links a {
     text-decoration: none;
+    color: #b3b3b3;
+    transition: color 0.3s ease;
+}
+
+.footer-secret-links a:hover {
+    color: #ffffff;                 
+}
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;     
+        align-items: center;
+        text-align: center;
+    }
+    .footer-logo {
+        justify-content: center;
+    }
+}
+
+/* ABOUT PAGE BRAND LINK FIX */
+.logo-text-link {
+    text-decoration: none;
+    color: inherit; /* Prevents logo text from turning standard link blue */
+}
+
+/* SUBHEADING TEXT */
+.about-subheading {
+    color: #1500FF; /* Matches theme color blue */
     font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
 }
 
-.footer-right{
-    margin-top: 10px;
+/* GRID / FLEX ALIGNMENT FOR IMAGE + ENTRY TEXT */
+.about-description {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.dev-picture img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid #222222;
+}
+
+.dev-description {
+    flex: 1;
+}
+
+/* TEXT STORY CONTAINER BLOCK */
+.about-story {
+    background-color: #111111;
+    border: 1px solid #222222;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+.about-story h3 {
+    font-size: 22px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+/* RESPONSIVE LAYOUT SCALING FOR PHONES */
+@media (max-width: 768px) {
+    .about-description {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .dev-picture img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* EXTENDED DETAILED PROJECT GRID CONTAINER */
+.projects-showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Dynamically scales columns gracefully */
+    gap: 25px;
+    margin-top: 40px;
+}
+
+/* INDIVIDUAL ADVANCED PROJECT CARDS */
+.detailed-project-card {
+    background-color: #111111;
+    border: 1px solid #222222;
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures the launch button stays perfectly aligned at the bottom */
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease;
+}
+
+.detailed-project-card:hover {
+    transform: translateY(-6px);
+    border-color: #1500FF;
+}
+
+/* CARD INNER TOP ROW */
+.project-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.detailed-project-card h3 {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.detailed-project-card p {
+    color: #b3b3b3;
     font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
-.footer-secret-link{
-    color: #FFFFFF;
+/* SERVER HOSTING BADGES */
+.project-badge {
+    font-size: 11px;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.project-badge.vercel {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.project-badge.netlify {
+    background-color: rgba(0, 218, 198, 0.1);
+    color: #00dac6;
+    border: 1px solid #00dac6;
+}
+
+/* TECH STACK CHIPS CONTAINER */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.project-tags span {
+    background-color: #1c1c1c;
+    color: #888888;
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 4px;
+}
+
+/* REDIRECT ACTION LAUNCH LINK BUTTONS */
+.project-launch-btn {
     text-decoration: none;
+    color: #1500FF;
     font-size: 14px;
+    font-weight: bold;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+    display: inline-block;
+    align-self: flex-start;
+}
+
+.detailed-project-card:hover .project-launch-btn {
+    color: #ffffff;
+    padding-left: 5px; /* Animates the arrow pointing forward on hover */
+}
+
+/* CENTERING WRAPPER FOR DEDICATED PAGES */
+.page-center-wrapper {
+    min-height: 70vh; /* Gives the main section breathing room between the header and footer */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Enhances width layout specifically for the standalone contact form page */
+.page-center-wrapper .contact-form-wrapper {
+    max-width: 650px;
+    width: 100%;
+    background-color: #080808; /* Dark subtle backdrop panel */
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #1c1c1c;
+    margin-top: 25px;
+}
+
+/* MODERN MINIMALIST MOBILE TOPBAR */
+@media (max-width: 768px) {
+    .header {
+        display: flex;
+        flex-direction: row;       /* Keeps logo left, nav right */
+        justify-content: space-between;
+        align-items: flex-start;   /* Aligns items cleanly at the top */
+        padding: 15px 4%;
+        gap: 15px;
+    }
+
+    .topbar {
+        display: flex;
+        flex-direction: column;    /* Nav links on top, button underneath */
+        align-items: flex-end;     /* Flushes nav items to the right side */
+        gap: 10px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;       /* Keeps links sitting cleanly side-by-side */
+        gap: 12px;                 /* Slightly tighter spacing for mobile screens */
+    }
+
+    .nav-links a {
+        font-size: 13px;           /* Scales down font size to look premium and sharp */
+        letter-spacing: 0.5px;
+    }
+
+    .contact-button {
+        padding: 6px 14px;         /* Makes the button small, compact, and micro-styled */
+        font-size: 12px;
+        border-radius: 4px;
+        width: auto;               /* Prevents it from stretching full width */
+    }
+}
+
+/* ==========================================================================
+   ADMIN PORTAL & LOGIN WALL UI
+   ========================================================================== */
+
+/* Fullscreen background centering wrapper for the login view */
+#loginWall {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #000000;
+}
+
+/* The login box interface panel */
+#loginWall > div {
+    background-color: #111111;
+    border: 1px solid #222222;
+    border-radius: 12px;
+    padding: 40px;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+#loginWall img {
+    height: 45px;
+    margin-bottom: 15px;
+    object-fit: contain;
+}
+
+#loginWall h2 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+#loginWall p {
+    color: #666666;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+/* Form layout wrappers */
+#adminLoginForm div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+#adminLoginForm label {
+    color: #b3b3b3;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+#adminLoginForm input[type="email"],
+#adminLoginForm input[type="password"] {
+    background-color: #080808;
+    border: 1px solid #222222;
+    border-radius: 6px;
+    padding: 14px;
+    color: #ffffff;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+#adminLoginForm input:focus {
+    outline: none;
+    border-color: #1500FF;
+}
+
+/* Custom Checkbox Bot Verification Row */
+#adminLoginForm .custom-captcha {
+    flex-direction: row;       /* Force checkbox, text, and shield inline */
+    align-items: center;
+    justify-content: space-between;
+    background-color: #080808;
+    border: 1px solid #222222;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 25px;
+}
+
+#adminLoginForm #captchaBox {
+    appearance: none;          /* Erase default ugly system checkbox look */
+    width: 22px;
+    height: 22px;
+    border: 2px solid #444444;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    background-color: #111111;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+#adminLoginForm #captchaBox:checked {
+    background-color: #1500FF;
+    border-color: #1500FF;
+}
+
+/* Draws a clean custom checkmark inside the checked box */
+#adminLoginForm #captchaBox:checked::after {
+    content: '✓';
+    position: absolute;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#adminLoginForm .custom-captcha span {
+    color: #ffffff;
+    font-size: 14px;
+    margin-right: auto;
+    margin-left: 12px;
+    user-select: none;
+}
+
+#adminLoginForm .custom-captcha img {
+    height: 26px;
+    margin-bottom: 0;          /* Reset general image margins */
+    opacity: 0.7;
+}
+
+/* Authorization Action Button */
+#adminLoginForm button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    background-color: #1500FF;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#adminLoginForm button[type="submit"]:hover {
+    background-color: #0000C8;
+}
+
+#loginError {
+    font-size: 13px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+
+/* ==========================================================================
+   SECURE ADMIN PANEL ENVIRONMENT UI
+   ========================================================================== */
+
+#secureDashboard {
+    width: 100%;
+}
+
+.dashboard-intro {
+    margin-bottom: 35px;
+}
+
+.dashboard-intro h1 {
+    font-size: 32px;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+/* Secure Stats grid paneling */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.metrics-grid .card {
+    background-color: #111111;
+    border: 1px solid #222222;
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.metrics-grid .card h4 {
+    color: #666666;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.metrics-grid .card p {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+}
+
+.metrics-grid .card span {
+    color: #1500FF;
+    font-size: 12px;
+}
+
+/* Setup wrapper container for any future configurations tools */
+.admin-controls-wrapper {
+    width: 100%;
+    min-height: 100px;
 }

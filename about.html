@@ -6,51 +6,54 @@
     <link rel="icon" type="image/x-icon" href="Icon_Final (no bg and high qual).png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.google.com/specimen/Montenegrin+Gothic+One?preview.script=Latn" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montenegrin+Gothic+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>A.B.I.R | Beyond Ordinary</title>
+    <title>About Me | A.B.I.R</title>
 </head>
-<body bgcolor="#000000" text="#FFFFFF">
+<body>
     <header class="header">
-        <div class="topbar">
-            <div class="logo">
-                <img src="Icon_Final (no bg and high qual).png" alt="Logo">
-            </div>
+        <div class="logo">
+            <img src="Icon_Final (no bg and high qual).png" alt="Logo">
+            <a href="index.html" class="logo-text-link"><span class="logo-text">A.B.I.R</span></a>
+        </div>
+        
+        <nav class="topbar">
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="projects.html">Projects</a>
                 <a href="contact.html">Contact</a>
             </div>
-            <div class="contact-button">
-                <button>Contact Me</button>
-            </div>
-        </div>
+            <button class="contact-button" onclick="window.location.href='contact.html'">Contact Me</button>
+        </nav>
     </header>
 
-    <section class="about-intro">
-        <div class="about-heading">
-            <h2>About Me</h2>
-        </div>
-        <div class="about-subheading">
-            <h3>14 Years Old • Developer • Passionate</h3>
-        </div>
-        <div class="about-description">
-            <div class="dev-picture">
-                <img src="abir.jpg" alt="This is the developer's profile picture, if the image does not load, it might be that you have a poor intrnet connection, and if you have a good internet connetion our, image storage system might be down. In that case, please wait for the developers to fix it. Thank You!">
+    <main class="section-container">
+        <section class="about-intro">
+            <h2 class="section-heading">About Me</h2>
+            <p class="about-subheading">14 Years Old • Developer • Passionate</p>
+            
+            <div class="about-description">
+                <div class="dev-picture">
+                    <img src="abir.jpg" alt="Abir - Profile Picture">
+                </div>
+                <div class="dev-description">
+                    <p class="section-description">Hi there! I am Abir. I am 14 years old, and I am a developer. I am very passionate, and I want to help people who are starting out with programming!</p>
+                    <p class="section-description">If you are interested in learning about my story, please continue reading below.</p>
+                </div>
             </div>
-            <div class="dev-description">
-                <p>Hi there! I am Abir. I am 14 years old, and I am partially a developer. I am very passionate and i want to help peoplewho have less knowledge about programming in exchange for something small.</p>
-                <p>If you are interested in learning about my story, please continue reading.</p>
+            
+            <div class="about-story">
+                <h3>My Story</h3>
+                <p class="section-description">The story will be added here later on.</p>
             </div>
-        </div>
-        <div class="about-story">
-            <p>The story will be added here later on.</p>
-        </div>
-    </section>
-    <section class="footer">
+        </section>
+    </main>
+
+    <footer class="footer">
         <div class="footer-logo">
-            <img src="Icon_Final (no bg and high qual).png" alt="Logo"> A.B.I.R | Beyond Ordinary
+            <img src="Icon_Final (no bg and high qual).png" alt="Logo"> 
+            <span class="footer-logo-text">A.B.I.R | Beyond Ordinary</span>
         </div>
         <div class="footer-links">
             <a href="index.html">Home</a>
@@ -66,6 +69,6 @@
             <a href="updates.html" target="_blank">See Past Updates</a>
             <a href="this-update.html" target="_blank">Learn about this update</a>
         </div>
-    </section>
+    </footer>
 </body>
 </html>

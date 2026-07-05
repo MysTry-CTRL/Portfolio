@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="Icon_Final (no bg and high qual).png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montenegrin+Gothic+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Admin Portal | A.B.I.R</title>
+</head>
+<body>
+
+    <div id="loginWall">
+        <div>
+            <img src="Icon_Final (no bg and high qual).png" alt="Logo">
+            <h2>Admin Control</h2>
+            <p>Authentication required to access configuration environments.</p>
+            
+            <form id="adminLoginForm">
+                <div>
+                    <label>Email Address</label>
+                    <input type="email" id="adminEmail" placeholder="admin@beyondordinary.com" required>
+                </div>
+                
+                <div>
+                    <label>Secure Password</label>
+                    <input type="password" id="adminPassword" placeholder="••••••••" required>
+                </div>
+
+                <div class="custom-captcha">
+                    <input type="checkbox" id="captchaBox">
+                    <span>I'm not a robot</span>
+                    <img src="Icon_Final (no bg and high qual).png" alt="Verification Shield">
+                </div>
+
+                <button type="submit">Authenticate System</button>
+                <div id="loginError" style="color: red; display: none;"></div>
+            </form>
+        </div>
+    </div>
+
+
+    <div id="secureDashboard" style="display: none;">
+        
+        <header class="header">
+            <div class="logo">
+                <img src="Icon_Final (no bg and high qual).png" alt="Logo">
+                <span class="logo-text">A.B.I.R Panel</span>
+            </div>
+            <nav class="topbar">
+                <div class="nav-links">
+                    <a href="index.html">View Live Site</a>
+                </div>
+                <button class="contact-button" id="logoutBtn">Secure Log Out</button>
+            </nav>
+        </header>
+
+        <main class="section-container">
+            
+            <div class="dashboard-intro">
+                <h1>Control Panel</h1>
+                <p class="section-description">Welcome back, Abir. System core engines are fully online.</p>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="card">
+                    <h4>Total Hits</h4>
+                    <p>1,482</p>
+                    <span>+12% traffic spike today</span>
+                </div>
+                <div class="card">
+                    <h4>Form Messages</h4>
+                    <p>14</p>
+                    <span>Pending read responses</span>
+                </div>
+                <div class="card">
+                    <h4>Hosted Links</h4>
+                    <p>4 Active</p>
+                    <span>Vercel & Netlify networks up</span>
+                </div>
+                <div class="card">
+                    <h4>System Core State</h4>
+                    <p>0.0.2</p>
+                    <span>All engines status: Beta Stable</span>
+                </div>
+            </div>
+
+            <div class="admin-controls-wrapper">
+                </div>
+
+        </main>
+
+        <footer class="footer">
+            <div class="footer-logo">
+                <img src="Icon_Final (no bg and high qual).png" alt="Logo"> 
+                <span class="footer-logo-text">A.B.I.R | Beyond Ordinary</span>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-right">
+                <p>&copy; 2026 A.B.I.R | Beyond Ordinary. All rights reserved.</p>
+            </div>
+            <div class="footer-secret-links">
+                <strong>Current Version: 0.0.2 (beta)</strong>
+                <span>Secure Session Active</span>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

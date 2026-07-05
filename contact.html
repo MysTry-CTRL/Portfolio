@@ -6,46 +6,48 @@
     <link rel="icon" type="image/x-icon" href="Icon_Final (no bg and high qual).png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.google.com/specimen/Montenegrin+Gothic+One?preview.script=Latn" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montenegrin+Gothic+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>A.B.I.R | Beyond Ordinary</title>
+    <title>Contact Me | A.B.I.R</title>
 </head>
-<body bgcolor="#000000" text="#FFFFFF">
+<body>
     <header class="header">
-        <div class="topbar">
-            <div class="logo">
-                <img src="Icon_Final (no bg and high qual).png" alt="Logo">
-            </div>
+        <div class="logo">
+            <img src="Icon_Final (no bg and high qual).png" alt="Logo">
+            <a href="index.html" class="logo-text-link"><span class="logo-text">A.B.I.R</span></a>
+        </div>
+        
+        <nav class="topbar">
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="projects.html">Projects</a>
                 <a href="contact.html">Contact</a>
             </div>
-            <div class="back-button">
-                <button onclick="window.location.href='index.html'">Back to Home</button>
-            </div>
-        </div>
+            <button class="contact-button" onclick="window.location.href='contact.html'">Contact Me</button>
+        </nav>
     </header>
-    <section class="contact-section">
-        <div class="contact-heading">
-            <h2>Contact Me</h2>
-        </div>
-        <div class="contact-description">
-            <p>If you would like to get in touch with me, please feel free to reach out via email. I am always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
-        </div>
-        <div class="contact-form">
-            <form>
-                <input type="text" name="name" placeholder="Your Name" required><br>
-                <input type="email" name="email" placeholder="Your Email" required><br>
-                <textarea name="message" placeholder="Your Message" required></textarea><br>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </section>
-    <section class="footer">
+
+    <main class="section-container page-center-wrapper">
+        <section class="contact-section">
+            <h2 class="section-heading">Contact Me</h2>
+            <p class="section-description">If you would like to get in touch with me, please feel free to reach out via email. I am always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
+            
+            <div class="contact-form-wrapper">
+                <form class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="accent-button">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
         <div class="footer-logo">
-            <img src="Icon_Final (no bg and high qual).png" alt="Logo"> A.B.I.R | Beyond Ordinary
+            <img src="Icon_Final (no bg and high qual).png" alt="Logo"> 
+            <span class="footer-logo-text">A.B.I.R | Beyond Ordinary</span>
         </div>
         <div class="footer-links">
             <a href="index.html">Home</a>
@@ -61,6 +63,6 @@
             <a href="updates.html" target="_blank">See Past Updates</a>
             <a href="this-update.html" target="_blank">Learn about this update</a>
         </div>
-    </section>
+    </footer>
 </body>
 </html>

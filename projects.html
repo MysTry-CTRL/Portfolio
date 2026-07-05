@@ -6,30 +6,97 @@
     <link rel="icon" type="image/x-icon" href="Icon_Final (no bg and high qual).png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.google.com/specimen/Montenegrin+Gothic+One?preview.script=Latn" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montenegrin+Gothic+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>A.B.I.R | Beyond Ordinary</title>
+    <title>Projects | A.B.I.R</title>
 </head>
-<body bgcolor="#000000" text="#FFFFFF">
+<body>
     <header class="header">
-        <div class="topbar">
-            <div class="logo">
-                <img src="Icon_Final (no bg and high qual).png" alt="Logo">
-            </div>
+        <div class="logo">
+            <img src="Icon_Final (no bg and high qual).png" alt="Logo">
+            <a href="index.html" class="logo-text-link"><span class="logo-text">A.B.I.R</span></a>
+        </div>
+        
+        <nav class="topbar">
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="projects.html">Projects</a>
                 <a href="contact.html">Contact</a>
             </div>
-            <div class="contact-button">
-                <button>Contact Me</button>
-            </div>
-        </div>
+            <button class="contact-button" onclick="window.location.href='contact.html'">Contact Me</button>
+        </nav>
     </header>
-    <section class="footer">
+
+    <main class="section-container">
+        <h2 class="section-heading">My Creations</h2>
+        <p class="section-description">Here is a detailed collection of the applications and websites I have engineered independently. These are hosted live on Vercel and Netlify networks.</p>
+        
+        <div class="projects-showcase-grid">
+            
+            <div class="detailed-project-card">
+                <div class="project-card-header">
+                    <h3>My eBook Site</h3>
+                    <span class="project-badge vercel">Vercel</span>
+                </div>
+                <p>A web platform designed for accessing, reading, and organizing electronic books seamlessly with a clean UI.</p>
+                <div class="project-tags">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>Web Hosting</span>
+                </div>
+                <a href="https://e-zone-seven.vercel.app/" target="_blank" class="project-launch-btn">Launch Live Site &rarr;</a>
+            </div>
+
+            <div class="detailed-project-card">
+                <div class="project-card-header">
+                    <h3>The Media Hub</h3>
+                    <span class="project-badge vercel">Vercel</span>
+                </div>
+                <p>A centralized system configured to organize, manage, or display digital multimedia content elements effectively.</p>
+                <div class="project-tags">
+                    <span>UI Design</span>
+                    <span>Flexbox</span>
+                    <span>Media Storage</span>
+                </div>
+                <a href="https://themediahub.vercel.app/" target="_blank" class="project-launch-btn">Launch Live Site &rarr;</a>
+            </div>
+
+            <div class="detailed-project-card">
+                <div class="project-card-header">
+                    <h3>Cybrly</h3>
+                    <span class="project-badge netlify">Netlify</span>
+                </div>
+                <p>A polished front-end web project optimized for speed, built to establish a distinct online concept layout.</p>
+                <div class="project-tags">
+                    <span>Modern Web</span>
+                    <span>Netlify CDN</span>
+                    <span>Responsive</span>
+                </div>
+                <a href="https://cybrly.netlify.app/" target="_blank" class="project-launch-btn">Launch Live Site &rarr;</a>
+            </div>
+
+            <div class="detailed-project-card">
+                <div class="project-card-header">
+                    <h3>Love Story Site</h3>
+                    <span class="project-badge netlify">Netlify</span>
+                </div>
+                <p>A custom themed event application engineered and published live to celebrate special historical milestones.</p>
+                <div class="project-tags">
+                    <span>CSS Graphics</span>
+                    <span>Typography</span>
+                    <span>Production Build</span>
+                </div>
+                <a href="https://bhalobashargolpo.netlify.app" target="_blank" class="project-launch-btn">Launch Live Site &rarr;</a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
         <div class="footer-logo">
-            <img src="Icon_Final (no bg and high qual).png" alt="Logo"> A.B.I.R | Beyond Ordinary
+            <img src="Icon_Final (no bg and high qual).png" alt="Logo"> 
+            <span class="footer-logo-text">A.B.I.R | Beyond Ordinary</span>
         </div>
         <div class="footer-links">
             <a href="index.html">Home</a>
@@ -45,6 +112,6 @@
             <a href="updates.html" target="_blank">See Past Updates</a>
             <a href="this-update.html" target="_blank">Learn about this update</a>
         </div>
-    </section>
+    </footer>
 </body>
 </html>

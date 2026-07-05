@@ -11,38 +11,40 @@
     <title>A.B.I.R | Beyond Ordinary</title>
 </head>
 <body>
+    <!--HEADER SECTION-->
     <header class="header">
-        <div class="topbar">
-            <div class="logo">
-                <img src="Icon_Final (no bg and high qual).png" alt="Logo">
-            </div>
+        <div class="logo">
+            <img src="Icon_Final (no bg and high qual).png" alt="Logo">
+            <a href="index.html" class="logo-text-link"><span class="logo-text">A.B.I.R</span></a>
+        </div>
+        
+        <nav class="topbar">
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="projects.html">Projects</a>
                 <a href="contact.html">Contact</a>
             </div>
-            <div class="contact-button">
-                <button onclick="window.location.href='contact.html'">Contact Me</button>
-            </div>
-        </div>
+            <button class="contact-button" onclick="window.location.href='contact.html'">Contact Me</button>
+        </nav>
     </header>
+ 
+    <!--HERO SECTION-->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Hi, I am Abir</h1>
+            <p>Welcome to my portfolio! I am a passionate developer with a love for creating innovative solutions.</p>
+        </div>
+        <div class="hero-badge">
+            <span>14 years old passionate developer</span>
+        </div>
+    </div>
     
-    <section class="introduction">
-        <div class="heading">
-            <h1>Hi, I'm Abir</h1>
-        </div>
-        <div class="subheading">
-            <h2>Beyond Ordinary</h2>
-        </div>
-        <div class="description">
-            <p>Welcome to my portfolio! i am a passionate 14 years old developer, still learning programming, but i love to serve people for a little exchange. You can continue exploring the site to learn more about my and you can contach with methrough my email! enjoy!</p>
-        </div>  
         <div class="intro-cards">
-            <article class="card">
+            <a href="about.html" class="card-link"><article class="card">
                 <p><h3>14 years old</h3></p>
                 <p>since 2011</p>
-            </article>
+            </article></a>
             <article class="card">
                 <h3>2+ years</h3>
                 <p>of coding experiences</p>
@@ -58,56 +60,76 @@
         </div>
     </section>
     
+    <!-- ABOUT ME SECTION -->
     <section class="about-me">
-        <div class="about-me-heading">
-            <h2>About Me</h2>
-        </div>
-        <div class="about-me-picture">
-            <img src="abir.jpg" alt="This is the developer's profile picture, if the image does not load, it might be that you have a poor intrnet connection, and if you have a good internet connetion our, image storage system might be down. In that case, please wait for the developers to fix it. Thank You!">
-        </div>
-        <div class="about-me-description">
-            <p>I'm a 14-year-old developer with a passion for programming and creating innovative solutions. I enjoy learning new technologies and applying them to real-world projects. My goal is to make a positive impact through my work and continue growing as a developer.</p>
-        </div>
-        <div class="about-button">
-            <button onclick="window.location.href='about.html'">Learn More About Me</button>
+        <div class="section-container">
+            <h2 class="section-heading">About Me</h2>
+            <div class="about-content">
+                <div class="about-me-picture">
+                    <img src="abir.jpg" alt="Abir - Portfolio Developer">
+                </div>
+                <div class="about-me-text">
+                    <p class="section-description">I'm a 14-year-old developer with a passion for programming and creating innovative solutions. I enjoy learning new technologies and applying them to real-world projects. My goal is to make a positive impact through my work and continue growing as a developer.</p>
+                    <button class="accent-button" onclick="window.location.href='about.html'">Learn More About Me</button>
+                </div>
+            </div>
         </div>
     </section>
-    
+
+    <!-- PROJECTS SECTION -->
     <section class="projects">
-        <div class="projects-heading">
-            <h2>Projects</h2>
-        </div>
-        <div class="project-description">
-            <p>Since I am a newbie developer, I don't have any professional projects done with any existing group. But, I have made my own projects for myself and for my school (secretly) and have uploaded them on vercel and netlify. You can view them here:</p>
-        </div>
-        <div class="project-links">
-            <a href="https://e-zone-seven.vercel.app/" target="_blank">My eBook site</a>
-            <a href="https://themediahub.vercel.app/" target="_blank">The Media Hub</a>
-            <a href="https://cybrly.netlify.app/" target="_blank">Cybrly</a>
-            <a href="https://bhalobashargolpo.netlify.app" target="_blank">Love Story Site (uploaded on 14th Feb, 2025)</a>
+        <div class="section-container">
+            <h2 class="section-heading">Projects</h2>
+            <p class="section-description">Since I am a newbie developer, I don't have any professional projects done with any existing group. But, I have made my own projects for myself and for my school (secretly) and have uploaded them on Vercel and Netlify. You can view them here:</p>
+            
+            <div class="project-grid">
+    
+                <a href="https://e-zone-seven.vercel.app/" target="_blank" class="project-card">
+                    <img src="e-zone.svg" class="project-favicon" alt="Favicon">
+                    <span class="project-name">My eBook site</span>
+                </a>
+
+                <a href="https://themediahub.vercel.app/" target="_blank" class="project-card">
+                    <img src="the-media-hub.png" class="project-favicon" alt="Favicon">
+                    <span class="project-name">The Media Hub</span>
+                </a>
+
+                <a href="https://cybrly.netlify.app/" target="_blank" class="project-card">
+                    <img src="cybrly.svg" class="project-favicon" alt="Favicon">
+                    <span class="project-name">Cybrly</span>
+                </a>
+
+                <a href="https://bhalobashargolpo.netlify.app" target="_blank" class="project-card">
+                    <img src="love-story.svg" class="project-favicon" alt="Favicon">
+                    <span class="project-name">Love Story Site</span>
+                </a>
+
+            </div>
         </div>
     </section>
-    
+
+    <!-- CONTACT SECTION -->
     <section class="contact">
-        <div class="contact-heading">
-            <h2>Contact Me</h2>
-        </div>
-        <div class="contact-description">
-            <p>If you would like to get in touch with me, please feel free to reach out via email. I am always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
-        </div>
-        <div class="contact-form">
-            <form>
-                <input type="text" name="name" placeholder="Your Name" required><br>
-                <input type="email" name="email" placeholder="Your Email" required><br>
-                <textarea name="message" placeholder="Your Message" required></textarea><br>
-                <button type="submit">Send Message</button>
-            </form>
+        <div class="section-container">
+            <h2 class="section-heading">Contact Me</h2>
+            <p class="section-description">If you would like to get in touch with me, please feel free to reach out via email. I am always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
+            
+            <div class="contact-form-wrapper">
+                <form class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="accent-button">Send Message</button>
+                </form>
+            </div>
         </div>
     </section>
     
-    <section class="footer">
+    <!-- FOOTER SECTION -->
+    <div class="footer">
         <div class="footer-logo">
-            <img src="Icon_Final (no bg and high qual).png" alt="Logo"> A.B.I.R | Beyond Ordinary
+            <img src="Icon_Final (no bg and high qual).png" alt="Logo"> 
+            <span class="footer-logo-text">A.B.I.R | Beyond Ordinary</span>
         </div>
         <div class="footer-links">
             <a href="index.html">Home</a>
@@ -119,10 +141,9 @@
             <p>&copy; 2026 A.B.I.R | Beyond Ordinary. All rights reserved.</p>
         </div>
         <div class="footer-secret-links">
-            <strong>Current Version: Beta release 3</strong>
-            <a href="updates.html" target="_blank">See Past Updates</a>
-            <a href="this-update.html" target="_blank">Learn about this update</a>
+            <strong>Current Version: Release 4</strong>
+            <a href="dashboard.html" target="_blank">Admin Dashboard</a>
         </div>
-    </section>
+    </div>
 </body>
 </html>

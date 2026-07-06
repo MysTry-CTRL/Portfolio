@@ -44,11 +44,13 @@ body{
 .logo-text-link{
     text-decoration: none;
     color: inherit;
-    display: block;
+    display: inline-block;
+    transition: transform 0.3s ease-out;
 }
 
 .logo-text-link:hover{
-    transform: translateY(-5px);
+    transform: scale(1.2);
+    
 }
 
 .topbar {

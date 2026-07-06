@@ -1,10 +1,32 @@
-// Wait for the HTML elements to load fully into memory
 document.addEventListener('DOMContentLoaded', () => {
     
+    // ==========================================================================
+    // 1. DYNAMIC AGE UPDATER LAYER
+    // ==========================================================================
+    const ageElement = document.getElementById('my-age');
+    
+    if (ageElement) {
+        const birthDate = new Date('2011-08-06'); // Year-Month-Day
+        const today = new Date();
+        
+        let age = today.getFullYear() - birthDate.getFullYear();
+        const monthDifference = today.getMonth() - birthDate.getMonth();
+        const dayDifference = today.getDate() - birthDate.getDate();
+        
+        if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
+            age--;
+        }
+        
+        ageElement.textContent = age;
+    }
+
+    // ==========================================================================
+    // 2. ADMIN DASHBOARD AUTHENTICATION LAYER
+    // ==========================================================================
     const loginForm = document.getElementById('adminLoginForm');
     const logoutBtn = document.getElementById('logoutBtn');
 
-    // Handle Form Authentication submission event
+    // Only runs if the user is currently on the dashboard page
     if (loginForm) {
         loginForm.addEventListener('submit', (event) => {
             event.preventDefault();
@@ -14,14 +36,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const isNotRobot = document.getElementById('captchaBox').checked;
             const errorDisplay = document.getElementById('loginError');
 
-            // 1. Bot check confirmation validation
+            // Bot check confirmation validation
             if (!isNotRobot) {
                 errorDisplay.textContent = "Security clearance failed: Check 'I'm not a robot'.";
                 errorDisplay.style.display = "block";
                 return;
             }
 
-            // 2. Secret authentication parameters
+            // Secret authentication parameters
             if (email === "abirxxdbrine2024@gmail.com" && password === "#youtuber#69#") {
                 document.getElementById('loginWall').style.display = "none";
                 document.getElementById('secureDashboard').style.display = "block";
@@ -38,4 +60,5 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.reload();
         });
     }
+
 });

@@ -10,16 +10,25 @@ body{
     background: radial-gradient(circle at center #1500FF #000000 0.5);
     color: #ffffff;
     line-height: 1.7;
+    padding-top:80px;
 }
 
 /* HEADER SECTION */
 .header {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;            
-    padding: 15px 5%;               
-    background-color: #111111;      
+    position: fixed;        
+    top: 0;
+    left: 0;
     width: 100%;
+    z-index: 1000;         
+    background: rgba(0, 0, 0, 0.6);          
+    backdrop-filter: blur(12px);             
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    box-sizing: border-box; 
 }
 
 .logo {
@@ -257,6 +266,7 @@ body{
     border-radius: 8px;
     padding: 16px 20px;        
     text-decoration: none;
+    position: relative;        /* Added: Necessary to pin the notification text right above the card */
     transition: border-color 0.25s ease, transform 0.25s ease, background-color 0.25s ease;
 }
 
@@ -278,11 +288,41 @@ body{
     text-overflow: ellipsis;   /* Adds '...' if text ever gets too long for the card */
 }
 
+/* HOVER NOTIFICATION TOOLTIP EFFECT */
+.project-card::after {
+    content: attr(data-hover-msg); /* Dynamically grabs text from your HTML data-hover-msg attribute */
+    position: absolute;
+    bottom: 115%;                  /* Positions it slightly above your card layout */
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    background-color: #1500FF;     /* Premium blue background layout match */
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    white-space: normal;           /* Allows text to break into lines naturally if too long */
+    width: 220px;                  /* Sets a clean readable container layout boundary */
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    pointer-events: none;          /* Fixes hover flashing bugs by letting mouse look right through it */
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 50;
+}
+
 /* INTERACTION ANIMATIONS */
 .project-card:hover {
     border-color: #1500FF;     
     background-color: #141414; 
     transform: translateY(-4px); /* Changed to nudge UP instead of right, looks cleaner in a row grid */
+}
+
+/* Reveal the dynamic hover message bubble smoothly */
+.project-card:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
 
 .project-card:hover .project-name {
@@ -295,7 +335,6 @@ body{
         grid-template-columns: 1fr; /* Drops back to single column stack on mobile so it doesn't break */
     }
 }
-
 /* --- CONTACT SECTION SPECIFICS --- */
 .contact-form-wrapper {
     max-width: 600px;
@@ -881,3 +920,4 @@ body{
     width: 100%;
     min-height: 100px;
 }
+

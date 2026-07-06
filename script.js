@@ -1,27 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // ==========================================================================
-    // 1. DYNAMIC AGE UPDATER LAYER
-    // ==========================================================================
-    const ageElement = document.getElementById('my-age');
-    
-    if (ageElement) {
-        const birthDate = new Date('2011-08-06'); // Year-Month-Day
-        const today = new Date();
-        
-        let age = today.getFullYear() - birthDate.getFullYear();
-        const monthDifference = today.getMonth() - birthDate.getMonth();
-        const dayDifference = today.getDate() - birthDate.getDate();
-        
-        if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
-            age--;
-        }
-        
-        ageElement.textContent = age;
-    }
 
     // ==========================================================================
-    // 2. ADMIN DASHBOARD AUTHENTICATION LAYER
+    // 1. ADMIN DASHBOARD AUTHENTICATION LAYER
     // ==========================================================================
     const loginForm = document.getElementById('adminLoginForm');
     const logoutBtn = document.getElementById('logoutBtn');
@@ -33,23 +13,30 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const email = document.getElementById('adminEmail').value;
             const password = document.getElementById('adminPassword').value;
-            const isNotRobot = document.getElementById('captchaBox').checked;
+            const captchaBox = document.getElementById('captchaBox');
             const errorDisplay = document.getElementById('loginError');
 
-            // Bot check confirmation validation
-            if (!isNotRobot) {
-                errorDisplay.textContent = "Security clearance failed: Check 'I'm not a robot'.";
-                errorDisplay.style.display = "block";
+            // Defensive Check: Make sure captchaBox exists before checking if it is checked
+            if (captchaBox && !captchaBox.checked) {
+                if (errorDisplay) {
+                    errorDisplay.textContent = "Security clearance failed: Check 'I'm not a robot'.";
+                    errorDisplay.style.display = "block";
+                }
                 return;
             }
 
             // Secret authentication parameters
             if (email === "abirxxdbrine2024@gmail.com" && password === "#youtuber#69#") {
-                document.getElementById('loginWall').style.display = "none";
-                document.getElementById('secureDashboard').style.display = "block";
+                const loginWall = document.getElementById('loginWall');
+                const secureDashboard = document.getElementById('secureDashboard');
+                
+                if (loginWall) loginWall.style.display = "none";
+                if (secureDashboard) secureDashboard.style.display = "block";
             } else {
-                errorDisplay.textContent = "Invalid access credentials supplied.";
-                errorDisplay.style.display = "block";
+                if (errorDisplay) {
+                    errorDisplay.textContent = "Invalid access credentials supplied.";
+                    errorDisplay.style.display = "block";
+                }
             }
         });
     }

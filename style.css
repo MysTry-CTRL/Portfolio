@@ -4,10 +4,16 @@
     box-sizing: border-box;
 }
 
+html, body {
+    min-height: 100%;
+}
+
 body{
     font-family: 'Montenegrin Gothic One', sans-serif;
     background-color: #000000;
-    background: radial-gradient(circle at center #1500FF #000000 0.5);
+    background: radial-gradient(circle at top left, rgba(0, 133, 102, 0.792) 0%, rgba(0, 0, 0, 0.96) 35%, rgba(0, 0, 0, 1) 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     color: #ffffff;
     line-height: 1.7;
     padding-top:80px;
@@ -54,12 +60,11 @@ body{
     text-decoration: none;
     color: inherit;
     display: inline-block;
-    transition: transform 0.3s ease-out;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .logo-text-link:hover{
-    transform: scale(1.2);
-    
+    transform: scale(1.12) translateY(-2px);
 }
 
 .topbar {
@@ -81,12 +86,12 @@ body{
 }
 
 .nav-links a:hover {
-    color: #1500FF;                
+    color: #4fffd2;                
 }
 
 .contact-button {
-    background-color: #1500FF;      
-    color: #ffffff;                 
+    background-color: #4fffd2;      
+    color: #0a0a0a;                 
     border: none;
     padding: 10px 20px;
     border-radius: 5px;             
@@ -97,7 +102,7 @@ body{
 }
 
 .contact-button:hover {
-    background-color: #0000C8;      
+    background-color: #2fe0b1;      
 }
 
 /* HERO SECTION */
@@ -122,8 +127,8 @@ body{
     position: relative;
     top: 0;
     left: 0;
-    background-color: rgba(21, 0, 255, 0.26);
-    border: 2px solid #1500FF;
+    background-color: rgba(79, 255, 210, 0.26);
+    border: 2px solid #4fffd2;
     border-radius: 50px;
     padding: 10px 20px;
     margin-bottom: 20px;
@@ -155,12 +160,12 @@ body{
 
 .card:hover {
     transform: translateY(-5px); 
-    border-color: #1500FF;       
+    border-color: #4fffd2;       
 }
 
 
 .card h3 {
-    color: rgb(0, 149, 255);            
+    color: #4fffd2;            
     font-size: 24px;
     margin-bottom: 8px;
 }
@@ -195,7 +200,7 @@ body{
     display: block;
     width: 40px;
     height: 4px;
-    background-color: #1500FF;
+    background-color: #4fffd2;
     margin-top: 8px;
     border-radius: 2px;
 }
@@ -209,8 +214,8 @@ body{
 
 /* Universal Button style helper */
 .accent-button {
-    background-color: #1500FF;
-    color: #ffffff;
+    background-color: #4fffd2;
+    color: #0a0a0a;
     border: none;
     padding: 12px 24px;
     border-radius: 5px;
@@ -222,7 +227,7 @@ body{
 }
 
 .accent-button:hover {
-    background-color: #0000C8;
+    background-color: #2fe0b1;
     transform: translateY(-2px);
 }
 
@@ -295,7 +300,7 @@ body{
     bottom: 115%;                  /* Positions it slightly above your card layout */
     left: 50%;
     transform: translateX(-50%) translateY(8px);
-    background-color: #1500FF;     /* Premium blue background layout match */
+    background-color: #4fffd2;     /* Premium aquamarine background layout match */
     color: #ffffff;
     padding: 6px 12px;
     border-radius: 6px;
@@ -314,7 +319,7 @@ body{
 
 /* INTERACTION ANIMATIONS */
 .project-card:hover {
-    border-color: #1500FF;     
+    border-color: #4fffd2;     
     background-color: #141414; 
     transform: translateY(-4px); /* Changed to nudge UP instead of right, looks cleaner in a row grid */
 }
@@ -326,7 +331,7 @@ body{
 }
 
 .project-card:hover .project-name {
-    color: #1500FF;            
+    color: #4fffd2;            
 }
 
 /* RESPONSIVE DESIGN - STACKS ON MOBILE SCREEN */
@@ -367,7 +372,7 @@ body{
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-color: #1500FF; /* Focus ring highlights in theme blue */
+    border-color: #4fffd2; /* Focus ring highlights in theme aquamarine */
 }
 
 .contact-form button {
@@ -441,7 +446,7 @@ body{
 }
 
 .footer-links a:hover {
-    color: #1500FF;                 
+    color: #4fffd2;                 
 }
 
 .footer-right p {
@@ -459,7 +464,7 @@ body{
 }
 
 .footer-secret-links strong {
-    color: #1500FF;                 
+    color: #4fffd2;                 
     font-weight: bold;
 }
 
@@ -492,7 +497,7 @@ body{
 
 /* SUBHEADING TEXT */
 .about-subheading {
-    color: #1500FF; /* Matches theme color blue */
+    color: #4fffd2; /* Matches theme color aquamarine */
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 30px;
@@ -518,6 +523,7 @@ body{
 .dev-description {
     flex: 1;
 }
+
 
 /* TEXT STORY CONTAINER BLOCK */
 .about-story {
@@ -569,7 +575,7 @@ body{
 
 .detailed-project-card:hover {
     transform: translateY(-6px);
-    border-color: #1500FF;
+    border-color: #4fffd2;
 }
 
 /* CARD INNER TOP ROW */
@@ -608,9 +614,9 @@ body{
 }
 
 .project-badge.netlify {
-    background-color: rgba(0, 218, 198, 0.1);
-    color: #00dac6;
-    border: 1px solid #00dac6;
+    background-color: rgba(79, 255, 210, 0.12);
+    color: #4fffd2;
+    border: 1px solid #4fffd2;
 }
 
 /* TECH STACK CHIPS CONTAINER */
@@ -632,7 +638,7 @@ body{
 /* REDIRECT ACTION LAUNCH LINK BUTTONS */
 .project-launch-btn {
     text-decoration: none;
-    color: #1500FF;
+    color: #4fffd2;
     font-size: 14px;
     font-weight: bold;
     transition: color 0.2s ease, padding-left 0.2s ease;
@@ -641,7 +647,7 @@ body{
 }
 
 .detailed-project-card:hover .project-launch-btn {
-    color: #ffffff;
+    color: #4fffd2;
     padding-left: 5px; /* Animates the arrow pointing forward on hover */
 }
 
@@ -775,7 +781,7 @@ body{
 
 #adminLoginForm input:focus {
     outline: none;
-    border-color: #1500FF;
+    border-color: #4fffd2;
 }
 
 /* Custom Checkbox Bot Verification Row */
@@ -803,8 +809,8 @@ body{
 }
 
 #adminLoginForm #captchaBox:checked {
-    background-color: #1500FF;
-    border-color: #1500FF;
+    background-color: #4fffd2;
+    border-color: #4fffd2;
 }
 
 /* Draws a clean custom checkmark inside the checked box */
@@ -837,8 +843,8 @@ body{
 #adminLoginForm button[type="submit"] {
     width: 100%;
     padding: 14px;
-    background-color: #1500FF;
-    color: #ffffff;
+    background-color: #4fffd2;
+    color: #0a0a0a;
     border: none;
     border-radius: 6px;
     font-size: 15px;
@@ -848,7 +854,7 @@ body{
 }
 
 #adminLoginForm button[type="submit"]:hover {
-    background-color: #0000C8;
+    background-color: #2fe0b1;
 }
 
 #loginError {
@@ -887,12 +893,18 @@ body{
 
 .metrics-grid .card {
     background-color: #111111;
-    border: 1px solid #222222;
+    border: 1px solid rgba(79, 255, 210, 0.2);
     padding: 25px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     gap: 8px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.metrics-grid .card:hover {
+    border-color: #4fffd2;
+    transform: translateY(-3px);
 }
 
 .metrics-grid .card h4 {
@@ -911,7 +923,7 @@ body{
 }
 
 .metrics-grid .card span {
-    color: #1500FF;
+    color: #4fffd2;
     font-size: 12px;
 }
 
@@ -921,3 +933,91 @@ body{
     min-height: 100px;
 }
 
+
+/* ==========================================================================
+   BUTTON ANIMATION & LAYOUT STYLES
+   ========================================================================== */
+
+/* Container adjustment to make buttons sit neatly side-by-side */
+.about-me-text, .dev-description {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Global button styling so all buttons and button-like links use the same look */
+button,
+input[type="button"],
+input[type="submit"],
+.accent-button,
+.contact-button,
+.cv-button,
+.project-launch-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-family: inherit;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.3s ease, 
+                background-color 0.3s ease, 
+                border-color 0.3s ease, 
+                color 0.3s ease;
+    background-color: #4fffd2;
+    color: #0a0a0a;
+    border: 1px solid #4fffd2;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+.accent-button:hover,
+.contact-button:hover,
+.cv-button:hover,
+.project-launch-btn:hover {
+    background-color: #2fe0b1;
+    border-color: #2fe0b1;
+    box-shadow: 0 0 15px rgba(79, 255, 210, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Secondary outline variant for buttons that should feel less prominent */
+.cv-button,
+.project-launch-btn {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.cv-button:hover,
+.project-launch-btn:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: #4fffd2;
+    color: #4fffd2;
+}
+
+/* Tactile Click Feedback for all buttons */
+button:active,
+input[type="button"]:active,
+input[type="submit"]:active,
+.accent-button:active,
+.contact-button:active,
+.cv-button:active,
+.project-launch-btn:active {
+    transform: translateY(1px) scale(0.98);
+}
+
+/* Desktop optimization to line them up horizontally instead of stacked */
+@media (min-width: 768px) {
+    .about-me-text, .dev-description {
+        display: block; /* Restores text flow */
+    }
+    .accent-button, .cv-button {
+        margin-right: 12px; /* Adds space between them when side-by-side */
+        margin-top: 15px;
+    }
+}

@@ -29,21 +29,24 @@
         </nav>
     </header>
 
-    <main class="section-container page-center-wrapper">
-        <section class="contact-section">
-            <h2 class="section-heading">Contact Me</h2>
-            <p class="section-description">If you would like to get in touch with me, please feel free to reach out via email. I am always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
-            
-            <div class="contact-form-wrapper">
-                <form class="contact-form">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="accent-button">Send Message</button>
-                </form>
-            </div>
-        </section>
-    </main>
+   <main class="section-container page-center-wrapper">
+    <section class="contact-section">
+        <h2 class="section-heading">Contact Me</h2>
+        <p class="section-description">If you would like to get in touch with me, please feel free to reach out via email. I am always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
+        
+        <div class="contact-form-wrapper">
+            <form class="contact-form" action="https://formspree.io/f/mvzjndwp" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="accent-button">Send Message</button>
+                
+                <p class="form-success" style="color: #00dac6; display: none; margin-top: 15px; font-weight: bold; font-size: 14px;">Message sent successfully!</p>
+                <p class="form-error" style="color: #ff0055; display: none; margin-top: 15px; font-weight: bold; font-size: 14px;">Oops! Something went wrong. Please try again.</p>
+            </form>
+        </div>
+    </section>
+</main>
 
     <!-- FOOTER SECTION -->
     <div class="footer">
@@ -61,7 +64,7 @@
             <p>&copy; 2026 A.B.I.R | Beyond Ordinary. All rights reserved.</p>
         </div>
         <div class="footer-secret-links">
-            <strong>Current Version: Release 5</strong>
+            <strong>Current Version: Release 6</strong>
             <a href="dashboard.html" target="_blank">Admin Dashboard</a>
         </div>
     </div>

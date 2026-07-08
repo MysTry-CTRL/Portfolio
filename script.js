@@ -49,3 +49,50 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
+// ==========================================================================
+    // 2. PRO-MODE CONTACT FORM ASYNCHRONOUS SUBMISSION
+    // ==========================================================================
+    const dynamicForm = document.querySelector('.contact-form');
+
+    if (dynamicForm) {
+        dynamicForm.addEventListener('submit', async (event) => {
+            event.preventDefault(); // Stop page from flashing/reloading
+
+            const submitBtn = dynamicForm.querySelector('button[type="submit"]');
+            const successNotice = dynamicForm.querySelector('.form-success');
+            const errorNotice = dynamicForm.querySelector('.form-error');
+
+            // Collect text inputs safely
+            const dataPayload = new FormData(dynamicForm);
+
+            // Set loading state UI
+            submitBtn.textContent = "Sending...";
+            submitBtn.disabled = true;
+            if (successNotice) successNotice.style.display = "none";
+            if (errorNotice) errorNotice.style.display = "none";
+
+            try {
+                const connectivityCheck = await fetch(dynamicForm.action, {
+                    method: dynamicForm.method,
+                    body: dataPayload,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (connectivityCheck.ok) {
+                    if (successNotice) successNotice.style.display = "block";
+                    dynamicForm.reset(); // Wipe the inputs clean
+                } else {
+                    if (errorNotice) errorNotice.style.display = "block";
+                }
+            } catch (networkError) {
+                if (errorNotice) errorNotice.style.display = "block";
+            } finally {
+                // Restore button state
+                submitBtn.textContent = "Send Message";
+                submitBtn.disabled = false;
+            }
+        });
+    }

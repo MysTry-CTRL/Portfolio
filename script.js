@@ -1,54 +1,61 @@
-document.addEventListener('DOMContentLoaded', () => {
+// Import the Firebase functions we need
+// ==========================================================================
+// 1. ADMIN DASHBOARD AUTHENTICATION LAYER
+// ==========================================================================
+const loginForm = document.getElementById('adminLoginForm');
+const secureDashboard = document.getElementById('secureDashboard');
+const loginWall = document.getElementById('loginWall');
+const errorDisplay = document.getElementById('loginError');
 
-    // ==========================================================================
-    // 1. ADMIN DASHBOARD AUTHENTICATION LAYER
-    // ==========================================================================
-    const loginForm = document.getElementById('adminLoginForm');
-    const logoutBtn = document.getElementById('logoutBtn');
-
-    // Only runs if the user is currently on the dashboard page
-    if (loginForm) {
-        loginForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-            
-            const email = document.getElementById('adminEmail').value;
-            const password = document.getElementById('adminPassword').value;
-            const captchaBox = document.getElementById('captchaBox');
-            const errorDisplay = document.getElementById('loginError');
-
-            // Defensive Check: Make sure captchaBox exists before checking if it is checked
-            if (captchaBox && !captchaBox.checked) {
-                if (errorDisplay) {
-                    errorDisplay.textContent = "Security clearance failed: Check 'I'm not a robot'.";
-                    errorDisplay.style.display = "block";
-                }
-                return;
+// Track if you are securely signed in and verified
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        if (user.emailVerified) {
+            // SUCCESS: Device session is active and email link was clicked
+            if (loginWall) loginWall.style.display = "none";
+            if (secureDashboard) secureDashboard.style.display = "block";
+        } else {
+            if (errorDisplay) {
+                errorDisplay.textContent = "Security Notice: Please click the verification link sent to your email.";
+                errorDisplay.style.display = "block";
             }
-
-            // Secret authentication parameters
-            if (email === "abirxxdbrine2024@gmail.com" && password === "#youtuber#69#") {
-                const loginWall = document.getElementById('loginWall');
-                const secureDashboard = document.getElementById('secureDashboard');
-                
-                if (loginWall) loginWall.style.display = "none";
-                if (secureDashboard) secureDashboard.style.display = "block";
-            } else {
-                if (errorDisplay) {
-                    errorDisplay.textContent = "Invalid access credentials supplied.";
-                    errorDisplay.style.display = "block";
-                }
-            }
-        });
+        }
     }
-
-    // Handle Session Logout command link button click
-    if (logoutBtn) {
-        logoutBtn.addEventListener('click', () => {
-            window.location.reload();
-        });
-    }
-
 });
+
+if (loginForm) {
+    loginForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        
+        const email = document.getElementById('adminEmail').value;
+        const password = document.getElementById('adminPassword').value;
+
+        try {
+            // --- OPTION A: ONE-TIME REGISTRATION ---
+            // Uncomment the lines below THE VERY FIRST TIME to create your account, then comment it out again!
+            
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            await sendEmailVerification(auth.currentUser);
+            alert("Verification email dispatched! Check your inbox.");
+            return;
+            
+
+            // --- OPTION B: SECURE LOGIN ---
+            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            
+            if (!userCredential.user.emailVerified) {
+                await sendEmailVerification(auth.currentUser); // Re-send link if they forgot
+                throw new Error("Email not verified yet. A fresh verification link has been sent.");
+            }
+
+        } catch (error) {
+            if (errorDisplay) {
+                errorDisplay.textContent = error.message;
+                errorDisplay.style.display = "block";
+            }
+        }
+    });
+}
 
 // ==========================================================================
     // 2. PRO-MODE CONTACT FORM ASYNCHRONOUS SUBMISSION
@@ -96,3 +103,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+// Wait for the page structure to be ready
+document.addEventListener('DOMContentLoaded', () => {
+    // Select all instances of the CV button on the page
+    const cvButtons = document.querySelectorAll('.cv-button');
+
+    cvButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            
+            // Path to your PDF file in the project folder
+            const cvPath = 'Abir_CV.pdf'; 
+            
+            // Open the PDF in browser's integrated PDF viewer
+            window.open(cvPath, '_blank');
+        });
+    });
+});

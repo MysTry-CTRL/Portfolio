@@ -17,6 +17,7 @@ body{
     color: #ffffff;
     line-height: 1.7;
     padding-top:80px;
+    min-height: 100vh;
 }
 
 /* HEADER SECTION */
@@ -117,10 +118,16 @@ body{
     overflow: hidden;
 }
 
-.hero-content{
+.hero-content-heading{
     position:relative;
     font-size:32px;
     z-index: 2;
+}
+
+.hero-content-paragraph{
+    position: relative;
+    font-size: 30px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .hero-badge{
@@ -340,6 +347,97 @@ body{
         grid-template-columns: 1fr; /* Drops back to single column stack on mobile so it doesn't break */
     }
 }
+
+/* --- Socials --- */
+.social-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 25px;
+    width: 100%;
+}
+
+.social-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #111111;
+    border: 1px solid #222222;
+    border-radius: 8px;
+    padding: 16px 20px;
+    text-decoration: none;
+    position: relative;
+    transition: border-color 0.25s ease, transform 0.25s ease, background-color 0.25s ease;
+}
+
+.social-favicon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.social-name {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: color 0.25s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.social-card::after {
+    content: attr(data-hover-msg);
+    position: absolute;
+    bottom: 115%;
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    background-color: #4fffd2;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    white-space: normal;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 50;
+}
+
+.social-card:hover {
+    border-color: #4fffd2;
+    background-color: #141414;
+    transform: translateY(-4px);
+}
+
+.social-card:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.social-card:hover .social-name {
+    color: #4fffd2;
+}
+
+@media (max-width: 600px) {
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* --- CONTACT SECTION SPECIFICS --- */
 .contact-form-wrapper {
     max-width: 600px;
@@ -870,6 +968,13 @@ body{
 
 #secureDashboard {
     width: 100%;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+}
+
+.section-container {
+    flex: 1;
 }
 
 .dashboard-intro {
@@ -1020,4 +1125,17 @@ input[type="submit"]:active,
         margin-right: 12px; /* Adds space between them when side-by-side */
         margin-top: 15px;
     }
+}
+
+/* Update your main admin login page container layout */
+.login-page, #loginWall {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at top left, rgba(0, 218, 198, 0.15), transparent 60%), #0a0a0a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
 }

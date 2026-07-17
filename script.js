@@ -1,124 +1,248 @@
-// Import the Firebase functions we need
-// ==========================================================================
-// 1. ADMIN DASHBOARD AUTHENTICATION LAYER
-// ==========================================================================
-const loginForm = document.getElementById('adminLoginForm');
-const secureDashboard = document.getElementById('secureDashboard');
-const loginWall = document.getElementById('loginWall');
-const errorDisplay = document.getElementById('loginError');
+/* ==========================================
+   CONSTANTS
+========================================== */
 
-// Track if you are securely signed in and verified
-onAuthStateChanged(auth, (user) => {
-    if (user) {
-        if (user.emailVerified) {
-            // SUCCESS: Device session is active and email link was clicked
-            if (loginWall) loginWall.style.display = "none";
-            if (secureDashboard) secureDashboard.style.display = "block";
-        } else {
-            if (errorDisplay) {
-                errorDisplay.textContent = "Security Notice: Please click the verification link sent to your email.";
-                errorDisplay.style.display = "block";
-            }
-        }
+const TOAST_DURATION = 2200;
+const TOAST_OFFSET = 20;
+const MENU_PADDING = 10;
+const KEYBOARD_ESCAPE = "Escape";
+const SMOOTH_SCROLL = "smooth";
+const STORAGE_THEME_KEY = "theme";
+const THEME_DARK = "dark";
+const THEME_LIGHT = "light";
+
+/* ==========================================
+   CUSTOM CONTEXT MENU
+========================================== */
+
+const menu = document.getElementById("context-menu");
+
+document.addEventListener("contextmenu", (e) => {
+    // Allow context menu for input and textarea elements
+    if (e.target.closest("input") || e.target.closest("textarea")) {
+        return;
+    }
+
+    e.preventDefault();
+
+    let x = e.clientX;
+    let y = e.clientY;
+
+    menu.classList.add("active");
+
+    const menuWidth = menu.offsetWidth;
+    const menuHeight = menu.offsetHeight;
+
+    // Prevent menu from going off-screen horizontally
+    if (x + menuWidth > window.innerWidth) {
+        x = window.innerWidth - menuWidth - MENU_PADDING;
+    }
+
+    // Prevent menu from going off-screen vertically
+    if (y + menuHeight > window.innerHeight) {
+        y = window.innerHeight - menuHeight - MENU_PADDING;
+    }
+
+    menu.style.left = `${x}px`;
+    menu.style.top = `${y}px`;
+});
+
+document.addEventListener("click", () => {
+    menu.classList.remove("active");
+});
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === KEYBOARD_ESCAPE) {
+        menu.classList.remove("active");
     }
 });
 
-if (loginForm) {
-    loginForm.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        
-        const email = document.getElementById('adminEmail').value;
-        const password = document.getElementById('adminPassword').value;
+window.addEventListener("resize", () => {
+    menu.classList.remove("active");
+});
 
-        try {
-            // --- OPTION A: ONE-TIME REGISTRATION ---
-            // Uncomment the lines below THE VERY FIRST TIME to create your account, then comment it out again!
-            
-            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-            await sendEmailVerification(auth.currentUser);
-            alert("Verification email dispatched! Check your inbox.");
-            return;
-            
+/* ==========================================
+   MENU ACTIONS
+========================================== */
 
-            // --- OPTION B: SECURE LOGIN ---
-            const userCredential = await signInWithEmailAndPassword(auth, email, password);
-            
-            if (!userCredential.user.emailVerified) {
-                await sendEmailVerification(auth.currentUser); // Re-send link if they forgot
-                throw new Error("Email not verified yet. A fresh verification link has been sent.");
-            }
+document.querySelectorAll(".context-item").forEach(item => {
+    item.addEventListener("click", () => {
+        const action = item.dataset.action;
 
-        } catch (error) {
-            if (errorDisplay) {
-                errorDisplay.textContent = error.message;
-                errorDisplay.style.display = "block";
-            }
+        switch (action) {
+            case "home":
+                location.href = "index.html";
+                break;
+
+            case "about":
+                location.href = "about.html";
+                break;
+
+            case "projects":
+                location.href = "projects.html";
+                break;
+
+            case "contact":
+                location.href = "contact.html";
+                break;
+
+            case "copy":
+                navigator.clipboard.writeText(location.href);
+                showToast("📋 Portfolio link copied!");
+                break;
+
+            case "top":
+                window.scrollTo({
+                    top: 0,
+                    behavior: SMOOTH_SCROLL
+                });
+                break;
+
+            case "refresh":
+                location.reload();
+                break;
         }
+
+        menu.classList.remove("active");
     });
+});
+
+/* ==========================================
+   LIVE CLOCK
+========================================== */
+
+const contextTime = document.getElementById("contextTime");
+
+function updateContextClock() {
+    if (!contextTime) return;
+
+    const now = new Date();
+
+    const time = now.toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false
+    });
+
+    const date = now.toLocaleDateString([], {
+        weekday: "short",
+        month: "short",
+        day: "numeric"
+    });
+
+    contextTime.textContent = `${time} • ${date} • Portfolio v2.0`;
 }
 
-// ==========================================================================
-    // 2. PRO-MODE CONTACT FORM ASYNCHRONOUS SUBMISSION
-    // ==========================================================================
-    const dynamicForm = document.querySelector('.contact-form');
+updateContextClock();
+setInterval(updateContextClock, 1000);
 
-    if (dynamicForm) {
-        dynamicForm.addEventListener('submit', async (event) => {
-            event.preventDefault(); // Stop page from flashing/reloading
+/* ==========================================
+   THEME MANAGER
+========================================== */
 
-            const submitBtn = dynamicForm.querySelector('button[type="submit"]');
-            const successNotice = dynamicForm.querySelector('.form-success');
-            const errorNotice = dynamicForm.querySelector('.form-error');
+const body = document.body;
+const themeButton = document.getElementById("themeBtn");
 
-            // Collect text inputs safely
-            const dataPayload = new FormData(dynamicForm);
+// Load saved theme or default to dark
+const savedTheme = localStorage.getItem(STORAGE_THEME_KEY) || THEME_DARK;
+body.dataset.theme = savedTheme;
+updateThemeButton();
 
-            // Set loading state UI
-            submitBtn.textContent = "Sending...";
-            submitBtn.disabled = true;
-            if (successNotice) successNotice.style.display = "none";
-            if (errorNotice) errorNotice.style.display = "none";
+themeButton?.addEventListener("click", () => {
+    const current = body.dataset.theme;
+    const newTheme = current === THEME_DARK ? THEME_LIGHT : THEME_DARK;
 
-            try {
-                const connectivityCheck = await fetch(dynamicForm.action, {
-                    method: dynamicForm.method,
-                    body: dataPayload,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
+    body.dataset.theme = newTheme;
+    localStorage.setItem(STORAGE_THEME_KEY, newTheme);
+    updateThemeButton();
 
-                if (connectivityCheck.ok) {
-                    if (successNotice) successNotice.style.display = "block";
-                    dynamicForm.reset(); // Wipe the inputs clean
-                } else {
-                    if (errorNotice) errorNotice.style.display = "block";
-                }
-            } catch (networkError) {
-                if (errorNotice) errorNotice.style.display = "block";
-            } finally {
-                // Restore button state
-                submitBtn.textContent = "Send Message";
-                submitBtn.disabled = false;
-            }
+    const message = newTheme === THEME_DARK ? "🌙 Dark Theme Enabled" : "☀️ Light Theme Enabled";
+    showToast(message);
+});
+
+function updateThemeButton() {
+    if (!themeButton) return;
+
+    const icon = themeButton.querySelector("i");
+    const text = themeButton.querySelector("span");
+
+    if (body.dataset.theme === THEME_DARK) {
+        icon.className = "fa-solid fa-sun";
+        text.textContent = "Switch to Light Theme";
+    } else {
+        icon.className = "fa-solid fa-moon";
+        text.textContent = "Switch to Dark Theme";
+    }
+}
+
+/* ==========================================
+   BACKGROUND MUSIC
+========================================== */
+
+const music = document.getElementById("bgMusic");
+const musicButton = document.getElementById("musicBtn");
+
+musicButton?.addEventListener("click", () => {
+    if (!music) return;
+
+    const icon = musicButton.querySelector("i");
+    const text = musicButton.querySelector("span");
+
+    if (music.paused) {
+        music.play();
+        icon.className = "fa-solid fa-pause";
+        text.textContent = "Pause Background Music";
+        showToast("🎵 Music Playing");
+    } else {
+        music.pause();
+        icon.className = "fa-solid fa-music";
+        text.textContent = "Play Background Music";
+        showToast("⏸ Music Paused");
+    }
+});
+
+/* ==========================================
+   TOAST NOTIFICATION
+========================================== */
+
+function showToast(message) {
+    let toast = document.getElementById("portfolio-toast");
+
+    // Create toast element if it doesn't exist
+    if (!toast) {
+        toast = document.createElement("div");
+        toast.id = "portfolio-toast";
+        document.body.appendChild(toast);
+
+        Object.assign(toast.style, {
+            position: "fixed",
+            right: `${TOAST_OFFSET}px`,
+            bottom: `${TOAST_OFFSET}px`,
+            padding: "14px 20px",
+            borderRadius: "10px",
+            background: "rgba(20, 20, 20, 0.9)",
+            border: "1px solid rgba(79, 255, 210, 0.3)",
+            backdropFilter: "blur(18px)",
+            color: "#fff",
+            fontFamily: "inherit",
+            zIndex: "999999",
+            transition: "0.3s",
+            opacity: "0",
+            transform: "translateY(20px)"
         });
     }
 
-// Wait for the page structure to be ready
-document.addEventListener('DOMContentLoaded', () => {
-    // Select all instances of the CV button on the page
-    const cvButtons = document.querySelectorAll('.cv-button');
+    toast.textContent = message;
+    toast.style.opacity = "1";
+    toast.style.transform = "translateY(0)";
 
-    cvButtons.forEach(button => {
-        button.addEventListener('click', (event) => {
-            event.preventDefault();
-            event.stopPropagation();
-            
-            // Path to your PDF file in the project folder
-            const cvPath = 'Abir_CV.pdf'; 
-            
-            // Open the PDF in browser's integrated PDF viewer
-            window.open(cvPath, '_blank');
-        });
-    });
-});
+    // Clear existing timeout
+    clearTimeout(toast.timer);
+
+    // Auto-hide toast after duration
+    toast.timer = setTimeout(() => {
+        toast.style.opacity = "0";
+        toast.style.transform = "translateY(20px)";
+    }, TOAST_DURATION);
+}

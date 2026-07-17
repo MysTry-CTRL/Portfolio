@@ -7,14 +7,91 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montenegrin+Gothic+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <script type="module" src="firebase.js"></script>
     <title>Admin Portal | A.B.I.R</title>
 </head>
 <body>
+    <!-- CUSTOM CONTEXT MENU -->
+    <div id="context-menu">
 
-    <div id="loginWall">
+    <!-- Header -->
+    <div class="context-header">
+        <h3>A.B.I.R</h3>
+        <p id="contextTime">00:00 • Portfolio v2.0</p>
+    </div>
+
+    <div class="context-divider"></div>
+
+    <!-- Navigation -->
+    <button class="context-item" data-action="home">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+    </button>
+
+    <button class="context-item" data-action="about">
+        <i class="fa-solid fa-user"></i>
+        <span>About Me</span>
+    </button>
+
+    <button class="context-item" data-action="projects">
+        <i class="fa-solid fa-code"></i>
+        <span>Projects</span>
+    </button>
+
+    <button class="context-item" data-action="contact">
+        <i class="fa-solid fa-envelope"></i>
+        <span>Contact</span>
+    </button>
+
+    <div class="context-divider"></div>
+
+    <!-- Utilities -->
+    <button class="context-item" id="themeBtn">
+        <i class="fa-solid fa-moon"></i>
+        <span>Toggle Theme</span>
+    </button>
+
+    <button class="context-item" id="musicBtn">
+        <i class="fa-solid fa-music"></i>
+        <span>Play Background Music</span>
+    </button>
+
+    <button class="context-item"
+            onclick="window.open('https://github.com/MysTry-CTRL','_blank')">
+        <i class="fa-brands fa-github"></i>
+        <span>Visit GitHub</span>
+    </button>
+
+    <div class="context-divider"></div>
+
+    <!-- Portfolio Actions -->
+    <button class="context-item" data-action="copy">
+        <i class="fa-solid fa-copy"></i>
+        <span>Copy Portfolio Link</span>
+    </button>
+
+    <button class="context-item" data-action="top">
+        <i class="fa-solid fa-arrow-up"></i>
+        <span>Back to Top</span>
+    </button>
+
+    <button class="context-item" data-action="refresh">
+        <i class="fa-solid fa-rotate-right"></i>
+        <span>Refresh</span>
+    </button>
+
+</div>
+
+<!-- BACKGROUND MUSIC -->
+<audio id="bgMusic" loop>
+    <source src="assets/audio/background.mp3" type="audio/mpeg">
+</audio>
+
+<!-- LOGIN WALL -->
+<div id="loginWall">
         <div>
             <img src="Icon_Final (no bg and high qual).png" alt="Logo">
             <h2>Admin Control</h2>

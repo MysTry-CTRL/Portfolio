@@ -7,12 +7,90 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montenegrin+Gothic+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <title>Contact Me | A.B.I.R</title>
 </head>
 <body>
-    <header class="header">
+    <!-- CUSTOM CONTEXT MENU -->
+    <div id="context-menu">
+
+    <!-- Header -->
+    <div class="context-header">
+        <h3>A.B.I.R</h3>
+        <p id="contextTime">00:00 • Portfolio v2.0</p>
+    </div>
+
+    <div class="context-divider"></div>
+
+    <!-- Navigation -->
+    <button class="context-item" data-action="home">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+    </button>
+
+    <button class="context-item" data-action="about">
+        <i class="fa-solid fa-user"></i>
+        <span>About Me</span>
+    </button>
+
+    <button class="context-item" data-action="projects">
+        <i class="fa-solid fa-code"></i>
+        <span>Projects</span>
+    </button>
+
+    <button class="context-item" data-action="contact">
+        <i class="fa-solid fa-envelope"></i>
+        <span>Contact</span>
+    </button>
+
+    <div class="context-divider"></div>
+
+    <!-- Utilities -->
+    <button class="context-item" id="themeBtn">
+        <i class="fa-solid fa-moon"></i>
+        <span>Toggle Theme</span>
+    </button>
+
+    <button class="context-item" id="musicBtn">
+        <i class="fa-solid fa-music"></i>
+        <span>Play Background Music</span>
+    </button>
+
+    <button class="context-item"
+            onclick="window.open('https://github.com/MysTry-CTRL','_blank')">
+        <i class="fa-brands fa-github"></i>
+        <span>Visit GitHub</span>
+    </button>
+
+    <div class="context-divider"></div>
+
+    <!-- Portfolio Actions -->
+    <button class="context-item" data-action="copy">
+        <i class="fa-solid fa-copy"></i>
+        <span>Copy Portfolio Link</span>
+    </button>
+
+    <button class="context-item" data-action="top">
+        <i class="fa-solid fa-arrow-up"></i>
+        <span>Back to Top</span>
+    </button>
+
+    <button class="context-item" data-action="refresh">
+        <i class="fa-solid fa-rotate-right"></i>
+        <span>Refresh</span>
+    </button>
+
+</div>
+
+<!-- BACKGROUND MUSIC -->
+<audio id="bgMusic" loop>
+    <source src="assets/audio/background.mp3" type="audio/mpeg">
+</audio>
+
+<!-- HEADER SECTION -->
+<header class="header">
         <div class="logo">
             <img src="Icon_Final (no bg and high qual).png" alt="Logo">
             <a href="index.html" class="logo-text-link"><span class="logo-text">A.B.I.R</span></a>
@@ -31,20 +109,166 @@
 
    <main class="section-container page-center-wrapper">
     <section class="contact-section">
-        <h2 class="section-heading">Contact Me</h2>
-        <p class="section-description">If you would like to get in touch with me, please feel free to reach out via email. I am always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
-        
+
+        <h2 class="section-heading">Start a Project</h2>
+
+        <p class="section-description">
+            Looking to build a website or web application? Fill out the form below
+            with as much detail as possible. The more information you provide, the
+            better I can understand your vision and prepare an accurate quote.
+        </p>
+
         <div class="contact-form-wrapper">
-            <form class="contact-form" action="https://formspree.io/f/mvzjndwp" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit" class="accent-button">Send Message</button>
-                
-                <p class="form-success" style="color: #00dac6; display: none; margin-top: 15px; font-weight: bold; font-size: 14px;">Message sent successfully!</p>
-                <p class="form-error" style="color: #ff0055; display: none; margin-top: 15px; font-weight: bold; font-size: 14px;">Oops! Something went wrong. Please try again.</p>
+
+            <form class="contact-form"
+                  action="https://formspree.io/f/mvzjndwp"
+                  method="POST"
+                  enctype="multipart/form-data">
+
+                <!-- Client Information -->
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Full Name *"
+                    required>
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Email Address *"
+                    required>
+
+                <input
+                    type="text"
+                    name="company"
+                    placeholder="Company Name *"
+                    required>
+
+                <!-- Upload -->
+
+                <div class="upload-container">
+                    <label for="imageUpload" class="upload-btn">
+                        Upload Brand Assets
+                    </label>
+
+                    <span id="fileName">
+                        No file selected
+                    </span>
+
+                    <input
+                        type="file"
+                        id="imageUpload"
+                        name="reference_image"
+                        accept=".png,.jpg,.jpeg,.webp,.svg"
+                        hidden>
+                </div>
+
+                <!-- Project -->
+
+                <input
+                    type="text"
+                    name="project_name"
+                    placeholder="Project Name *"
+                    required>
+
+                <select name="project_type" required>
+                    <option value="" selected disabled>
+                        Select Project Type *
+                    </option>
+
+                    <option>Portfolio Website</option>
+                    <option>Business Website</option>
+                    <option>E-commerce Website</option>
+                    <option>Landing Page</option>
+                    <option>Dashboard</option>
+                    <option>Web Application</option>
+                    <option>UI / UX Design</option>
+                    <option>Other</option>
+                </select>
+
+                <textarea
+                    name="project_description"
+                    rows="8"
+                    placeholder="Describe your project in detail. Include the purpose, required pages, features, preferred colors, design style, target audience, and any other important information."
+                    required></textarea>
+
+                <!-- Deadline -->
+
+<label class="form-label">Project Deadline</label>
+
+<div class="date-wrapper">
+    <input
+        type="date"
+        id="deadline"
+        name="deadline"
+        required>
+</div>
+
+<!-- Budget -->
+
+<label class="form-label">Estimated Budget (USD)</label>
+
+<div class="budget-input">
+
+    <button
+        type="button"
+        id="decreaseBudget"
+        class="budget-btn">
+        −
+    </button>
+
+    <input
+        type="number"
+        id="budget"
+        name="budget"
+        value="500"
+        min="0"
+        step="50"
+        required>
+
+    <button
+        type="button"
+        id="increaseBudget"
+        class="budget-btn">
+        +
+    </button>
+
+</div>
+
+                <input
+                    type="url"
+                    name="reference_website"
+                    placeholder="Reference Website (Optional)">
+
+                <input
+                    type="text"
+                    value="Preferred Payment Method: Payoneer"
+                    disabled>
+
+                <label class="checkbox">
+                    <input type="checkbox" required>
+                    I confirm that the information above is accurate.
+                </label>
+
+                <button type="submit" class="accent-button">
+                    Send Project Inquiry
+                </button>
+
+                <p class="form-success"
+                   style="display:none;color:#00dac6;margin-top:15px;font-weight:bold;font-size:14px;">
+                    Thank you! Your project inquiry has been sent successfully.
+                </p>
+
+                <p class="form-error"
+                   style="display:none;color:#ff0055;margin-top:15px;font-weight:bold;font-size:14px;">
+                    Something went wrong. Please try again later.
+                </p>
+
             </form>
+
         </div>
+
     </section>
 </main>
 

@@ -1,0 +1,20 @@
+{
+  "name": "A.B.I.R - Developer Portfolio",
+  "short_name": "A.B.I.R",
+  "icons": [
+    {
+      "src": "assets/image/Icon_Final (no bg and high qual).png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/image/Icon_Final (no bg and high qual).png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#0d0e15",
+  "theme_color": "#4fffd2"
+}

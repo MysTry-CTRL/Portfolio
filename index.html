@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="assets/image/Icon_Final (no bg and high qual).png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montenegrin+Gothic+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="site.webmanifest">
+    <script src="script.js" defer></script>
+    <title>A.B.I.R | Beyond Ordinary</title>
+</head>
+<body>
+
+    <div id="context-menu" role="menu" aria-label="Custom Context Menu">
+
+    <div class="context-group" id="group-default">
+        
+        <button class="context-item" data-action="home">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </button>
+        <button class="context-item" data-action="about">
+            <i class="fa-solid fa-user"></i>
+            <span>About Me</span>
+        </button>
+        <button class="context-item" data-action="projects">
+            <i class="fa-solid fa-code"></i>
+            <span>Projects</span>
+        </button>
+        <button class="context-item" data-action="contact">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Contact</span>
+        </button>
+
+        <div class="context-divider"></div>
+
+        <button class="context-item" id="themeBtn">
+            <i class="fa-solid fa-moon"></i>
+            <span>Toggle Theme</span>
+        </button>
+        <button class="context-item" id="musicBtn">
+            <i class="fa-solid fa-music"></i>
+            <span>Play Background Music</span>
+        </button>
+        <button class="context-item" onclick="window.open('https://github.com/MysTry-CTRL','_blank')">
+            <i class="fa-brands fa-github"></i>
+            <span>Visit GitHub</span>
+        </button>
+
+        <div class="context-divider"></div>
+
+        <button class="context-item" data-action="copy">
+            <i class="fa-solid fa-copy"></i>
+            <span>Copy Portfolio Link</span>
+        </button>
+        <button class="context-item" data-action="top">
+            <i class="fa-solid fa-arrow-up"></i>
+            <span>Back to Top</span>
+        </button>
+        <button class="context-item" data-action="refresh">
+            <i class="fa-solid fa-rotate-right"></i>
+            <span>Refresh</span>
+        </button>
+    </div>
+
+    <div class="context-group" id="group-text" style="display: none;">
+        <button class="context-item" data-action="copy-text">
+            <i class="fa-solid fa-copy"></i>
+            <span>Copy Text</span>
+        </button>
+        <button class="context-item" data-action="select-paragraph">
+            <i class="fa-solid fa-paragraph"></i>
+            <span>Select All (Paragraph)</span>
+        </button>
+
+        <div class="context-divider"></div>
+
+        <button class="context-item" data-action="refresh">
+            <i class="fa-solid fa-rotate-right"></i>
+            <span>Reload</span>
+        </button>
+    </div>
+
+    <div class="context-group" id="group-link" style="display: none;">
+        <button class="context-item" data-action="open-new-tab">
+            <i class="fa-solid fa-up-right-from-square"></i>
+            <span>Open Link in New Tab</span>
+        </button>
+        <button class="context-item" data-action="open-new-window">
+            <i class="fa-solid fa-window-restore"></i>
+            <span>Open Link in New Window</span>
+        </button>
+        <button class="context-item" data-action="open-incognito">
+            <i class="fa-solid fa-user-ninja"></i>
+            <span>Open Link in Incognito</span>
+        </button>
+
+        <div class="context-divider"></div>
+
+        <button class="context-item" onclick="window.open('https://github.com/MysTry-CTRL','_blank')">
+            <i class="fa-brands fa-github"></i>
+            <span>View on GitHub</span>
+        </button>
+
+        <div class="context-divider"></div>
+
+        <button class="context-item" data-action="refresh">
+            <i class="fa-solid fa-rotate-right"></i>
+            <span>Reload</span>
+        </button>
+        <button class="context-item" data-action="copy-link">
+            <i class="fa-solid fa-link"></i>
+            <span>Copy Link</span>
+        </button>
+    </div>
+
+</div>
+
+<audio id="bgMusic" loop>
+    <source src="assets/audio/background.mp3" type="audio/mpeg">
+</audio>
+
+    <header class="header">
+        <div class="logo">
+            <a href="index.html" class="logo-text-link">
+                <img src="assets/image/Icon_Final (no bg and high qual).png" alt="Logo">
+            </a>
+        </div>
+        
+        <nav class="topbar">
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="feedback.html">Feedback</a>
+            </div>
+            <button class="contact-button" onclick="window.location.href='contact.html'">Contact Me</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero">
+                <div class="hero-content-heading">
+                    <h1>HI, I AM ABIR</h1>
+                </div>
+                <div class="hero-content-paragraph">
+                    <p>Welcome to my portfolio! I am a passionate developer with a love for creating innovative solutions.</p>
+                </div>
+                <div class="hero-badge">
+                    <span>Still Learning :)</span>
+                </div>
+            </div>
+            
+            <div class="intro-cards">
+                <a href="about.html" class="card-link">
+                    <article class="card">
+                        <h3>14 YEARS OLD</h3>
+                        <p>SINCE 2011</p>
+                    </article>
+                </a>
+                <a href="about.html" class="card-link">
+                    <article class="card">
+                        <h3>2+ YEARS</h3>
+                        <p>OF CODING EXPERIENCES</p>
+                    </article>
+                </a>
+                <a href="projects.html" class="card-link">
+                    <article class="card">
+                        <h3>4+</h3>
+                        <p>PROJECTS COMPLETED</p>
+                    </article>
+                </a>
+                <a href="partner.html" class="card-link">
+                    <article class="card">
+                        <h3>1+</h3>
+                        <p>TRUSTED PARTNERS</p>
+                    </article>
+                </a>
+            </div>
+        </section>
+        
+        <section class="about-me">
+            <div class="section-container">
+                <h2 class="section-heading">About Me</h2>
+                <div class="about-content">
+                    <div class="about-me-picture">
+                        <img src="abir.jpg" alt="Abir - Portfolio Developer">
+                    </div>
+                    <div class="about-me-text">
+                        <p class="section-description">I'm a 14-year-old developer with a passion for programming and creating innovative solutions. I enjoy learning new technologies and applying them to real-world projects. My goal is to make a positive impact through my work and continue growing as a developer.</p>
+                        <button class="accent-button" onclick="window.location.href='about.html'">LEARN MORE ABOUT ME</button>
+                        <button class="cv-button" onclick="window.location.href='cv.html'">Preview CV</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects">
+            <div class="section-container">
+                <h2 class="section-heading">Projects</h2>
+                <p class="section-description">Since I am a newbie developer, I don't have any professional projects done with any existing group. But, I have made my own projects for myself and for my school (secretly) and have uploaded them on Vercel and Netlify. You can view them here:</p>
+                
+                <div class="project-grid">
+
+                    <a href="https://e-zone-seven.vercel.app/" target="_blank" class="project-card" data-hover-msg="This website is no longer being maintained">
+                        <img src="assets/image/e-zone.svg" class="project-favicon" alt="Favicon">
+                        <span class="project-name">My EBook Site</span>
+                    </a>
+
+                    <a href="https://themediahub.vercel.app/" target="_blank" class="project-card" data-hover-msg="This website is disabled, but this is a moderated version for your review">
+                        <img src="assets/image/the-media-hub.png" class="project-favicon" alt="Favicon">
+                        <span class="project-name">The Media Hub</span>
+                    </a>
+
+                    <a href="https://cybrly.netlify.app/" target="_blank" class="project-card" data-hover-msg="This site is permanently down">
+                        <img src="assets/image/cybrly.svg" class="project-favicon" alt="Favicon">
+                        <span class="project-name">Cybrly</span>
+                    </a>
+
+                    <a href="https://bhalobashargolpo.netlify.app" target="_blank" class="project-card" data-hover-msg="Use this site for your significant other on 14th Feb">
+                        <img src="assets/image/love-story.svg" class="project-favicon" alt="Favicon">
+                        <span class="project-name">Love Story Site</span>
+                    </a>
+
+                </div>
+
+                <div style="text-align: center; margin-top: 25px;">
+                    <a href="projects.html" class="accent-button" style="text-decoration: none; display: inline-block;">View More</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="social">
+            <div class="section-container">
+                <h2 class="section-heading">Socials</h2>
+                <p class="section-description">Here are my socials you can visit for more information:</p>
+                
+                <div class="social-grid">
+
+                    <a href="https://www.youtube.com/@MysTryReyal" target="_blank" class="social-card" data-hover-msg="Visit my YouTube channel">
+                        <img src="assets/image/YouTube.png" class="social-favicon" alt="Favicon">
+                        <span class="social-name">YouTube</span>
+                    </a>
+
+                    <a href="https://www.instagram.com/_am_i_bisashable_" target="_blank" class="social-card" data-hover-msg="Visit my Instagram profile">
+                        <img src="assets/image/Instagram.png" class="social-favicon" alt="Favicon">
+                        <span class="social-name">Instagram</span>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@_mystry._.reyal_" target="_blank" class="social-card" data-hover-msg="Visit my TikTok profile">
+                        <img src="assets/image/TikTok.png" class="social-favicon" alt="Favicon">
+                        <span class="social-name">TikTok</span>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="contact">
+            <div class="section-container">
+                <h2 class="section-heading">Contact Me</h2>
+                <p class="section-description">If you would like to get in touch with me, please feel free to reach out via email. I am always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
+                
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" action="https://formspree.io/f/mvzjndwp" method="POST">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="accent-button">SEND MESSAGE</button>
+                        
+                        <p class="form-success" style="color: #00dac6; display: none; margin-top: 15px; font-weight: bold; font-size: 14px;">Message sent successfully!</p>
+                        <p class="form-error" style="color: #ff0055; display: none; margin-top: 15px; font-weight: bold; font-size: 14px;">Oops! Something went wrong. Please try again.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="footer">
+        <div class="footer-logo">
+            <img src="assets/image/Icon_Final (no bg and high qual).png" alt="Logo"> 
+        </div>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-right">
+            <p>&copy; 2026 A.B.I.R | Beyond Ordinary. All rights reserved.</p>
+        </div>
+        <div class="footer-secret-links">
+            <strong>Current Version: Release 9</strong>
+            <a href="blog.html">blog</a>
+            <a href="partner.html">partner</a>
+            <a href="feedback.html">Feedback</a>
+        </div>
+    </div>
+</body>
+</html>

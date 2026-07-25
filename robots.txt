@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Direct search engine crawlers to your sitemap (if generated later)
+# Sitemap: https://yourdomain.com/sitemap.xml

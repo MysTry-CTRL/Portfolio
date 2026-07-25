@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="assets/image/Icon_Final (no bg and high qual).png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montenegrin+Gothic+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="site.webmanifest">
+    <script src="script.js" defer></script>
+    <title>404 - Page Not Found | A.B.I.R</title>
+</head>
+<body>
+
+    <div id="context-menu" role="menu" aria-label="Custom Context Menu">
+
+        <div class="context-group" id="group-default">
+            <button class="context-item" data-action="home">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </button>
+            <button class="context-item" data-action="about">
+                <i class="fa-solid fa-user"></i>
+                <span>About Me</span>
+            </button>
+            <button class="context-item" data-action="projects">
+                <i class="fa-solid fa-code"></i>
+                <span>Projects</span>
+            </button>
+            <button class="context-item" data-action="contact">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Contact</span>
+            </button>
+
+            <div class="context-divider"></div>
+
+            <button class="context-item" id="themeBtn">
+                <i class="fa-solid fa-moon"></i>
+                <span>Toggle Theme</span>
+            </button>
+            <button class="context-item" id="musicBtn">
+                <i class="fa-solid fa-music"></i>
+                <span>Play Background Music</span>
+            </button>
+            <button class="context-item" onclick="window.open('https://github.com/MysTry-CTRL','_blank')">
+                <i class="fa-brands fa-github"></i>
+                <span>Visit GitHub</span>
+            </button>
+
+            <div class="context-divider"></div>
+
+            <button class="context-item" data-action="top">
+                <i class="fa-solid fa-arrow-up"></i>
+                <span>Back to Top</span>
+            </button>
+            <button class="context-item" data-action="refresh">
+                <i class="fa-solid fa-rotate-right"></i>
+                <span>Refresh</span>
+            </button>
+        </div>
+
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="assets/audio/background.mp3" type="audio/mpeg">
+    </audio>
+
+    <header class="header">
+        <div class="logo">
+            <a href="index.html" class="logo-text-link">
+                <img src="assets/image/Icon_Final (no bg and high qual).png" alt="Logo">
+            </a>
+        </div>
+        
+        <nav class="topbar">
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="feedback.html">Feedback</a>
+            </div>
+            <button class="contact-button" onclick="window.location.href='contact.html'">Contact Me</button>
+        </nav>
+    </header>
+
+    <main class="section-container" style="min-height: 70vh; display: flex; align-items: center; justify-content: center;">
+        <div class="error-card" style="
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 50px 30px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin: 0 20px;
+        ">
+            <h1 style="font-size: 6rem; color: #4fffd2; margin-bottom: 10px; letter-spacing: 4px;">404</h1>
+            <h2 style="font-size: 1.6rem; color: #ffffff; margin-bottom: 15px; text-transform: uppercase;">Lost in Cyberspace?</h2>
+            <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; line-height: 1.6; margin-bottom: 30px;">
+                The page you are looking for might have been removed, renamed, or is temporarily unavailable.
+            </p>
+            <a href="index.html" class="contact-launch-btn" style="
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                width: auto;
+                padding: 12px 30px;
+            ">
+                <i class="fa-solid fa-house"></i> Return to Safety
+            </a>
+        </div>
+    </main>
+
+    <div class="footer">
+        <div class="footer-logo">
+            <img src="assets/image/Icon_Final (no bg and high qual).png" alt="Logo"> 
+        </div>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-right">
+            <p>&copy; 2026 A.B.I.R | Beyond Ordinary. All rights reserved.</p>
+        </div>
+        <div class="footer-secret-links">
+            <strong>Current Version: Release 9</strong>
+            <a href="blog.html">blog</a>
+            <a href="partner.html">partner</a>
+            <a href="feedback.html">Feedback</a>
+        </div>
+    </div>
+
+</body>
+</html>

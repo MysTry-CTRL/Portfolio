@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="assets/image/Icon_Final (no bg and high qual).png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montenegrin+Gothic+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="site.webmanifest">
+    <script src="script.js" defer></script>
+    <title>About Me | A.B.I.R</title>
+</head>
+<body>
+
+    <div id="context-menu" role="menu" aria-label="Custom Context Menu">
+
+        <div class="context-group" id="group-default">
+            
+            <button class="context-item" data-action="home">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </button>
+            <button class="context-item" data-action="about">
+                <i class="fa-solid fa-user"></i>
+                <span>About Me</span>
+            </button>
+            <button class="context-item" data-action="projects">
+                <i class="fa-solid fa-code"></i>
+                <span>Projects</span>
+            </button>
+            <button class="context-item" data-action="contact">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Contact</span>
+            </button>
+
+            <div class="context-divider"></div>
+
+            <button class="context-item" id="themeBtn">
+                <i class="fa-solid fa-moon"></i>
+                <span>Toggle Theme</span>
+            </button>
+            <button class="context-item" id="musicBtn">
+                <i class="fa-solid fa-music"></i>
+                <span>Play Background Music</span>
+            </button>
+            <button class="context-item" onclick="window.open('https://github.com/MysTry-CTRL','_blank')">
+                <i class="fa-brands fa-github"></i>
+                <span>Visit GitHub</span>
+            </button>
+
+            <div class="context-divider"></div>
+
+            <button class="context-item" data-action="copy">
+                <i class="fa-solid fa-copy"></i>
+                <span>Copy Portfolio Link</span>
+            </button>
+            <button class="context-item" data-action="top">
+                <i class="fa-solid fa-arrow-up"></i>
+                <span>Back to Top</span>
+            </button>
+            <button class="context-item" data-action="refresh">
+                <i class="fa-solid fa-rotate-right"></i>
+                <span>Refresh</span>
+            </button>
+        </div>
+
+        <div class="context-group" id="group-text" style="display: none;">
+            <button class="context-item" data-action="copy-text">
+                <i class="fa-solid fa-copy"></i>
+                <span>Copy Text</span>
+            </button>
+            <button class="context-item" data-action="select-paragraph">
+                <i class="fa-solid fa-paragraph"></i>
+                <span>Select All (Paragraph)</span>
+            </button>
+
+            <div class="context-divider"></div>
+
+            <button class="context-item" data-action="refresh">
+                <i class="fa-solid fa-rotate-right"></i>
+                <span>Reload</span>
+            </button>
+        </div>
+
+        <div class="context-group" id="group-link" style="display: none;">
+            <button class="context-item" data-action="open-new-tab">
+                <i class="fa-solid fa-up-right-from-square"></i>
+                <span>Open Link in New Tab</span>
+            </button>
+            <button class="context-item" data-action="open-new-window">
+                <i class="fa-solid fa-window-restore"></i>
+                <span>Open Link in New Window</span>
+            </button>
+            <button class="context-item" data-action="open-incognito">
+                <i class="fa-solid fa-user-ninja"></i>
+                <span>Open Link in Incognito</span>
+            </button>
+
+            <div class="context-divider"></div>
+
+            <button class="context-item" onclick="window.open('https://github.com/MysTry-CTRL','_blank')">
+                <i class="fa-brands fa-github"></i>
+                <span>View on GitHub</span>
+            </button>
+
+            <div class="context-divider"></div>
+
+            <button class="context-item" data-action="refresh">
+                <i class="fa-solid fa-rotate-right"></i>
+                <span>Reload</span>
+            </button>
+            <button class="context-item" data-action="copy-link">
+                <i class="fa-solid fa-link"></i>
+                <span>Copy Link</span>
+            </button>
+        </div>
+
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="assets/audio/background.mp3" type="audio/mpeg">
+    </audio>
+
+    <header class="header">
+        <div class="logo">
+            <a href="index.html" class="logo-text-link">
+                <img src="assets/image/Icon_Final (no bg and high qual).png" alt="Logo">
+            </a>
+        </div>
+        
+        <nav class="topbar">
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html" class="active">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="feedback.html">Feedback</a>
+            </div>
+            <button class="contact-button" onclick="window.location.href='contact.html'">Contact Me</button>
+        </nav>
+    </header>
+
+    <main class="section-container">
+        <section class="about-intro">
+            <h2 class="section-heading">ABOUT ME</h2>
+            <p class="about-subheading" style="text-align: center; color: var(--accent-color); font-weight: 600; margin-bottom: 30px;">
+                14 YEARS OLD • Developer • Passionate
+            </p>
+            
+            <div class="about-content">
+                <div class="about-me-picture">
+                    <img src="abir.jpg" alt="ABIR - Profile Picture">
+                </div>
+                <div class="about-me-text">
+                    <p class="section-description">
+                        Hi there! I am Abir. I am 14 years old, and I am a developer. I am very passionate, and I want to help people who are starting out with programming!
+                    </p>
+                    <p class="section-description">
+                        If you are interested in learning about my story, please continue reading below.
+                    </p>
+                    <button class="cv-button" onclick="window.open('cv.pdf', '_blank')">Preview CV</button>
+                </div>
+            </div>
+            
+            <div class="about-story" id="story" style="margin-top: 50px;">
+                <h3 class="section-heading" style="font-size: 1.8rem; margin-bottom: 25px;">My Story</h3>
+                
+                <p class="section-description" style="text-align: left; margin-bottom: 20px;">
+                    The journey began in the quiet isolation of 2020. While the physical world faced an unprecedented pause, a new horizon opened for Abir: the intricate, dynamic world of software development. What started as an introduction to coding quickly transformed into a profound fascination. He found himself captivated not just by the logic of programming, but by its aesthetics—the vibrant, color-coded syntax of modern Integrated Development Environments (IDEs) illuminating the screen, turning abstract logic into visual art.
+                </p>
+
+                <p class="section-description" style="text-align: left; margin-bottom: 20px;">
+                    Driven by this newfound passion, Abir dedicated himself to mastering the foundational blocks of technology. He rigorously pursued specialized coursework, building a robust foundation in Python for backend logic and problem-solving, alongside HTML for structuring intuitive web environments.
+                </p>
+
+                <p class="section-description" style="text-align: left; margin-bottom: 20px;">
+                    Today, that period of intense learning has culminated in a professional commitment to service. Abir stands ready to leverage his technical expertise and creative problem-solving skills to help you execute your vision. Whether you require efficient automation scripts or precise web architecture, he is dedicated to delivering high-quality, reliable solutions tailored to your needs.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <div class="footer">
+        <div class="footer-logo">
+            <img src="assets/image/Icon_Final (no bg and high qual).png" alt="Logo"> 
+        </div>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-right">
+            <p>&copy; 2026 A.B.I.R | Beyond Ordinary. All rights reserved.</p>
+        </div>
+        <div class="footer-secret-links">
+            <strong>Current Version: Release 9</strong>
+            <a href="blog.html">blog</a>
+            <a href="partner.html">partner</a>
+            <a href="feedback.html">Feedback</a>
+        </div>
+    </div>
+
+</body>
+</html>

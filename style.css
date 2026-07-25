@@ -18,6 +18,7 @@
     --radius-btn: 30px;
     --transition-fast: 0.2s ease;
     --transition-smooth: 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+   
 }
 
 /* ==========================================================================
@@ -27,10 +28,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
 }
 
 html {
     scroll-behavior: smooth;
+    background-color: #0d0e15; /* Set to your theme's dark background color */
+    min-height: 100%;
+    overscroll-behavior-y: none;
 }
 
 body {
@@ -43,6 +49,9 @@ body {
     padding-top: 90px;
     min-height: 100vh;
     overflow-x: hidden;
+    background-color: #0d0e15; /* Set to your theme's dark background color */
+    min-height: 100%;
+    overscroll-behavior-y: none;
 }
 
 /* Custom Scrollbar */
@@ -1040,6 +1049,38 @@ section {
 }
 
 
+
+/* ==========================================
+   RESPONSIVE DESIGN FOR PROJECTS PAGE (< 700px)
+========================================== */
+
+@media (max-width: 700px) {
+    .project-detail-card {
+        padding: 22px;
+        gap: 16px;
+    }
+
+    .project-title-wrapper {
+        gap: 12px;
+    }
+
+    .project-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 1.25rem;
+        border-radius: 10px;
+    }
+
+    .project-title-wrapper h3 {
+        font-size: 1.15rem;
+    }
+
+    .launch-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 /* ==========================================
    FEEDBACK PAGE STYLING (feedback.html)
 ========================================== */
@@ -1869,5 +1910,202 @@ section {
     .client-meta {
         flex-direction: column;
         align-items: flex-start;
+    }
+}
+
+/* ==========================================
+   GLOBAL MOBILE RESPONSIVE OVERRIDES (< 700px)
+========================================== */
+
+@media (max-width: 700px) {
+    /* 1. Global Font Size Scaling (~70% of default) */
+    html {
+        font-size: 70%;
+    }
+
+    body {
+        font-size: 0.95rem;
+    }
+
+    /* 2. Topbar Single-Row Mobile Layout */
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 15px;
+        flex-direction: row !important;
+        flex-wrap: nowrap;
+    }
+
+    .logo {
+        flex-shrink: 0;
+    }
+
+    .logo img {
+        max-height: 35px;
+        width: auto;
+    }
+
+    .topbar {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 0;
+    }
+
+    /* Convert topbar text links into FontAwesome icons */
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .nav-links a {
+        font-size: 0; /* Hide text label */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 6px;
+    }
+
+    /* Replace text with corresponding FontAwesome icons */
+    .nav-links a[href*="index"]::before {
+        content: "\f015"; /* fa-house */
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        font-size: 1.25rem;
+    }
+
+    .nav-links a[href*="about"]::before {
+        content: "\f007"; /* fa-user */
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        font-size: 1.25rem;
+    }
+
+    .nav-links a[href*="projects"]::before {
+        content: "\f121"; /* fa-code */
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        font-size: 1.25rem;
+    }
+
+    .nav-links a[href*="feedback"]::before {
+        content: "\f086"; /* fa-comments */
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        font-size: 1.25rem;
+    }
+
+    /* Contact Button turned into icon button */
+    .contact-button {
+        padding: 8px 10px;
+        font-size: 0;
+    }
+
+    .contact-button::before {
+        content: "\f0e0"; /* fa-envelope */
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        font-size: 1.1rem;
+    }
+}
+
+/* 3. Disable Hover Animations on Touch Devices / Mobile */
+@media (hover: none), (max-width: 700px) {
+    .contact-preview-card:hover,
+    .blog-card:hover,
+    .partner-card:hover,
+    .client-card:hover,
+    .contact-launch-btn:hover,
+    .blog-read-btn:hover,
+    .partner-link-btn:hover {
+        transform: none !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+        border-color: rgba(255, 255, 255, 0.08) !important;
+    }
+
+    .contact-preview-card:hover .contact-icon,
+    .partner-card:hover .partner-icon {
+        transform: none !important;
+    }
+
+    .contact-preview-card:hover .contact-features li,
+    .toc-link:hover {
+        transform: none !important;
+    }
+}
+
+
+/* ==========================================
+   CLIENTS SERVED SECTION UPDATES
+========================================== */
+
+.client-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+}
+
+.client-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.client-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.client-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 6px;
+}
+
+.client-visit-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(79, 255, 210, 0.08);
+    color: #4fffd2;
+    border: 1px solid rgba(79, 255, 210, 0.3);
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.client-visit-btn:hover {
+    background: #4fffd2;
+    color: #000000;
+    box-shadow: 0 0 15px rgba(79, 255, 210, 0.3);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .client-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .client-visit-btn {
+        width: 100%;
+        justify-content: center;
     }
 }

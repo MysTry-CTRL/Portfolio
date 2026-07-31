@@ -15,6 +15,76 @@
 </head>
 <body>
 
+    <div id="cmd-palette-overlay" class="cmd-overlay" style="display: none;">
+        <div class="cmd-modal">
+            <div class="cmd-header">
+                <i class="fa-solid fa-terminal cmd-icon"></i>
+                <input type="text" id="cmd-input" placeholder="Type a command or search page/socials..." autocomplete="off">
+                <span class="cmd-badge">ESC</span>
+            </div>
+            
+            <div class="cmd-list" id="cmd-list">
+                <div class="cmd-item" data-action="home">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Go to Home</span>
+                    <span class="cmd-shortcut">/home</span>
+                </div>
+                <div class="cmd-item" data-action="about">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Go to About Me</span>
+                    <span class="cmd-shortcut">/about</span>
+                </div>
+                <div class="cmd-item" data-action="skills">
+                    <i class="fa-solid fa-gears"></i>
+                    <span>Go to Skills</span>
+                    <span class="cmd-shortcut">/skills</span>
+                </div>
+                <div class="cmd-item" data-action="cv">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    <span>Go to CV</span>
+                    <span class="cmd-shortcut">/cv</span>
+                </div>
+                <div class="cmd-item" data-action="projects">
+                    <i class="fa-solid fa-code"></i>
+                    <span>Go to Projects</span>
+                    <span class="cmd-shortcut">/projects</span>
+                </div>
+                <div class="cmd-item" data-action="contact">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Go to Contact</span>
+                    <span class="cmd-shortcut">/contact</span>
+                </div>
+
+                <div class="cmd-item" data-action="github">
+                    <i class="fa-brands fa-github"></i>
+                    <span>GitHub Profile</span>
+                    <span class="cmd-shortcut">@MysTry-CTRL</span>
+                </div>
+                <div class="cmd-item" data-action="youtube">
+                    <i class="fa-brands fa-youtube"></i>
+                    <span>YouTube Channel</span>
+                    <span class="cmd-shortcut">@MysTryReyal</span>
+                </div>
+                <div class="cmd-item" data-action="instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>Instagram Profile</span>
+                    <span class="cmd-shortcut">@_am_i_bisashable_</span>
+                </div>
+                <div class="cmd-item" data-action="tiktok">
+                    <i class="fa-brands fa-tiktok"></i>
+                    <span>TikTok Profile</span>
+                    <span class="cmd-shortcut">@_mystry._.reyal_</span>
+                </div>
+
+                <div class="cmd-item" data-action="copy">
+                    <i class="fa-solid fa-copy"></i>
+                    <span>Copy Portfolio Link</span>
+                    <span class="cmd-shortcut">Action</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="context-menu" role="menu" aria-label="Custom Context Menu">
 
         <div class="context-group" id="group-default">
@@ -38,14 +108,6 @@
 
             <div class="context-divider"></div>
 
-            <button class="context-item" id="themeBtn">
-                <i class="fa-solid fa-moon"></i>
-                <span>Toggle Theme</span>
-            </button>
-            <button class="context-item" id="musicBtn">
-                <i class="fa-solid fa-music"></i>
-                <span>Play Background Music</span>
-            </button>
             <button class="context-item" onclick="window.open('https://github.com/MysTry-CTRL','_blank')">
                 <i class="fa-brands fa-github"></i>
                 <span>Visit GitHub</span>
@@ -74,7 +136,7 @@
             </button>
             <button class="context-item" data-action="select-paragraph">
                 <i class="fa-solid fa-paragraph"></i>
-                <span>Select All (Paragraph)</span>
+                <span>Select All</span>
             </button>
 
             <div class="context-divider"></div>
@@ -119,10 +181,6 @@
         </div>
 
     </div>
-
-    <audio id="bgMusic" loop>
-        <source src="assets/audio/background.mp3" type="audio/mpeg">
-    </audio>
 
     <header class="header">
         <div class="logo">
@@ -269,7 +327,7 @@
             <p>&copy; 2026 A.B.I.R | Beyond Ordinary. All rights reserved.</p>
         </div>
         <div class="footer-secret-links">
-            <strong>Current Version: Release 9</strong>
+            <strong>Current Version: Release 1.10</strong>
             <a href="blog.html">blog</a>
             <a href="partner.html">partner</a>
             <a href="feedback.html">Feedback</a>

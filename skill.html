@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="site.webmanifest">
     <script src="script.js" defer></script>
-    <title>404 - Page Not Found | A.B.I.R</title>
+    <title>Skills & Tech Stack | A.B.I.R</title>
 </head>
 <body>
 
@@ -86,7 +86,6 @@
     </div>
 
     <div id="context-menu" role="menu" aria-label="Custom Context Menu">
-
         <div class="context-group" id="group-default">
             <button class="context-item" data-action="home">
                 <i class="fa-solid fa-house"></i>
@@ -114,6 +113,10 @@
 
             <div class="context-divider"></div>
 
+            <button class="context-item" data-action="copy">
+                <i class="fa-solid fa-copy"></i>
+                <span>Copy Portfolio Link</span>
+            </button>
             <button class="context-item" data-action="top">
                 <i class="fa-solid fa-arrow-up"></i>
                 <span>Back to Top</span>
@@ -123,7 +126,6 @@
                 <span>Refresh</span>
             </button>
         </div>
-
     </div>
 
     <header class="header">
@@ -138,40 +140,90 @@
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="projects.html">Projects</a>
+                <a href="skills.html" class="active">Skills</a>
                 <a href="feedback.html">Feedback</a>
             </div>
             <button class="contact-button" onclick="window.location.href='contact.html'">Contact Me</button>
         </nav>
     </header>
 
-    <main class="section-container" style="min-height: 70vh; display: flex; align-items: center; justify-content: center;">
-        <div class="error-card" style="
-            max-width: 600px;
-            width: 100%;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            padding: 50px 30px;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            margin: 0 20px;
-        ">
-            <h1 style="font-size: 6rem; color: #4fffd2; margin-bottom: 10px; letter-spacing: 4px;">404</h1>
-            <h2 style="font-size: 1.6rem; color: #ffffff; margin-bottom: 15px; text-transform: uppercase;">Lost in Cyberspace?</h2>
-            <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; line-height: 1.6; margin-bottom: 30px;">
-                The page you are looking for might have been removed, renamed, or is temporarily unavailable.
+    <main class="section-container">
+        <section class="skills-intro">
+            <h2 class="section-heading">TECH STACK & SKILLS</h2>
+            <div class="heading-divider"></div>
+            <p class="section-description" style="text-align: center; max-width: 750px; margin: 20px auto 40px auto;">
+                A breakdown of technologies, frameworks, tools, and platforms I work with to design and develop modern web experiences.
             </p>
-            <a href="index.html" class="contact-launch-btn" style="
-                display: inline-flex;
-                align-items: center;
-                gap: 10px;
-                width: auto;
-                padding: 12px 30px;
-            ">
-                <i class="fa-solid fa-house"></i> Return to Safety
-            </a>
+        </section>
+
+        <div class="skills-grid-container">
+
+            <div class="skill-card">
+                <div class="skill-icon-wrapper">
+                    <i class="fa-brands fa-html5 html-icon"></i>
+                </div>
+                <div class="skill-content">
+                    <h3>HTML5</h3>
+                    <span class="skill-category">Frontend Language</span>
+                    <p>Semantic structure, web accessibility, and modern SEO-friendly page layouts.</p>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon-wrapper">
+                    <i class="fa-brands fa-css3-alt css-icon"></i>
+                </div>
+                <div class="skill-content">
+                    <h3>CSS3</h3>
+                    <span class="skill-category">Styling & UI</span>
+                    <p>Flexbox, CSS Grid, Glassmorphism design systems, custom animations, and mobile responsiveness.</p>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon-wrapper">
+                    <i class="fa-brands fa-js js-icon"></i>
+                </div>
+                <div class="skill-content">
+                    <h3>JavaScript</h3>
+                    <span class="skill-category">Core Scripting</span>
+                    <p>ES6+ features, DOM manipulation, asynchronous fetching, custom context menus, and event logic.</p>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon-wrapper">
+                    <i class="fa-brands fa-github github-icon"></i>
+                </div>
+                <div class="skill-content">
+                    <h3>Git & GitHub</h3>
+                    <span class="skill-category">Version Control</span>
+                    <p>Repository management, versioning control, CI/CD integrations, and collaboration workflows.</p>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon-wrapper">
+                    <i class="fa-solid fa-fire firebase-icon"></i>
+                </div>
+                <div class="skill-content">
+                    <h3>Firebase</h3>
+                    <span class="skill-category">Backend Services</span>
+                    <p>Client authentication systems, real-time database structures, and dynamic data binding.</p>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon-wrapper">
+                    <i class="fa-solid fa-cloud-arrow-up cloud-icon"></i>
+                </div>
+                <div class="skill-content">
+                    <h3>Vercel & Netlify</h3>
+                    <span class="skill-category">Edge Deployment</span>
+                    <p>Continuous automated deployment, domain configuration, and CDN site distribution.</p>
+                </div>
+            </div>
+
         </div>
     </main>
 

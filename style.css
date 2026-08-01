@@ -2165,16 +2165,46 @@ section {
 }
 
 /* CV Paper Sheet */
-.cv-paper {
-    max-width: 850px;
-    margin: 0 auto 80px auto;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
-    padding: 45px 50px;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    animation: fadeInUp 0.6s ease-out forwards;
+.cv-paper a{
+
+    color:#4fffd2;
+
+    text-decoration:none;
+
+    transition:.25s;
+
+}
+
+.cv-paper a:hover{
+
+    text-shadow:
+        0 0 10px #4fffd2;
+
+}
+
+.cv-paper{
+    max-width:900px;
+    margin:0 auto 80px;
+    padding:55px;
+    border-radius:24px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.025)
+        );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.45),
+        inset 0 1px rgba(255,255,255,.08);
+
+    animation:fadeInUp .6s ease-out forwards;
 }
 
 .cv-header {
@@ -2185,53 +2215,91 @@ section {
     gap: 20px;
 }
 
-.cv-name {
-    font-size: 2rem;
-    color: #ffffff;
-    letter-spacing: 1.5px;
-    margin-bottom: 4px;
+.cv-name{
+    font-size:2.8rem;
+    letter-spacing:3px;
+    font-weight:800;
+    margin-bottom:8px;
+    color:#fff;
+}
+.cv-title{
+    font-size:1rem;
+    font-weight:500;
+    color:#4fffd2;
+    letter-spacing:.5px;
 }
 
-.cv-title {
-    color: #4fffd2;
-    font-size: 1rem;
-    font-weight: 600;
+.cv-contact-details{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
 }
 
-.cv-contact-details p {
-    font-size: 0.88rem;
-    color: rgba(255, 255, 255, 0.75);
-    margin-bottom: 4px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+.cv-contact-details p{
+    font-size:.9rem;
+    transition:.25s;
+}
+
+.cv-contact-details p:hover{
+    color:#4fffd2;
 }
 
 .cv-contact-details i {
     color: #4fffd2;
 }
 
-.cv-divider {
-    border: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    margin: 25px 0;
+.cv-divider{
+    height:1px;
+    border:none;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(79,255,210,.6),
+            transparent
+        );
+
+    margin:35px 0;
 }
 
 .cv-section {
     margin-bottom: 30px;
 }
 
-.cv-section-title {
-    font-size: 1.15rem;
-    color: #ffffff;
-    margin-bottom: 14px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border-bottom: 1px solid rgba(79, 255, 210, 0.2);
-    padding-bottom: 6px;
+.cv-section-title{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    font-size:1.2rem;
+
+    margin-bottom:20px;
+
+    padding-bottom:10px;
+
+    border-bottom:
+        1px solid rgba(79,255,210,.15);
+
+    position:relative;
 }
 
+.cv-section-title::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-1px;
+    left:0;
+
+    width:90px;
+    height:2px;
+
+    background:#4fffd2;
+
+}
 .cv-section-title i {
     color: #4fffd2;
 }
@@ -2248,20 +2316,46 @@ section {
     gap: 10px;
 }
 
-.cv-skill-tag {
-    background: rgba(79, 255, 210, 0.08);
-    color: #4fffd2;
-    border: 1px solid rgba(79, 255, 210, 0.25);
-    padding: 6px 14px;
-    border-radius: 8px;
-    font-size: 0.82rem;
-    font-weight: 600;
+.cv-skill-tag{
+
+    transition:.3s;
+
 }
 
-.cv-item {
-    margin-bottom: 20px;
+.cv-skill-tag:hover{
+
+    transform:translateY(-3px);
+
+    background:#4fffd2;
+
+    color:#111;
+
+    box-shadow:
+        0 0 15px rgba(79,255,210,.45);
+
 }
 
+.cv-item{
+
+    padding:18px;
+
+    border-radius:14px;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    transition:.3s;
+
+}
+
+.cv-item:hover{
+
+    border-color:rgba(79,255,210,.25);
+
+    transform:translateY(-4px);
+
+    background:rgba(255,255,255,.02);
+
+}
 .cv-item-header {
     display: flex;
     justify-content: space-between;
@@ -2278,6 +2372,55 @@ section {
     color: #4fffd2;
     font-weight: 600;
 }
+.cv-results-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:20px;
+
+    overflow:hidden;
+
+    border-radius:12px;
+
+}
+
+.cv-results-table th{
+
+    background:#4fffd2;
+
+    color:#111;
+
+    padding:14px;
+
+    font-size:.9rem;
+
+}
+
+.cv-results-table td{
+
+    padding:14px;
+
+    color:rgba(255,255,255,.82);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.05);
+
+}
+
+.cv-results-table tr:nth-child(even){
+
+    background:rgba(255,255,255,.015);
+
+}
+
+.cv-results-table tr:hover{
+
+    background:rgba(79,255,210,.06);
+
+}
+
 
 .cv-sub {
     font-size: 0.85rem;
@@ -2330,14 +2473,84 @@ section {
     }
 }
 
-@media (max-width: 700px) {
-    .cv-paper {
-        padding: 25px 20px;
-    }
+@page{
 
-    .cv-header {
-        flex-direction: column;
-    }
+    size:A4;
+
+    margin:18mm;
+
+}
+
+@media(max-width:700px){
+
+.cv-name{
+
+    font-size:2.1rem;
+
+}
+
+.cv-item-header{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:6px;
+
+}
+
+.cv-results-table{
+
+    font-size:.8rem;
+
+}
+
+.cv-results-table th,
+.cv-results-table td{
+
+    padding:8px;
+
+}
+
+}
+
+/* Overall Grading Table */
+
+.cv-grade-table{
+    width:100%;
+    margin-top:20px;
+    border-collapse:collapse;
+    overflow:hidden;
+    border-radius:12px;
+}
+
+.cv-grade-table th{
+    padding:14px;
+    background:#4fffd2;
+    color:#111;
+    font-size:.9rem;
+    text-align:left;
+}
+
+.cv-grade-table td{
+    padding:14px;
+    border-bottom:1px solid rgba(255,255,255,.06);
+    color:rgba(255,255,255,.85);
+}
+
+.cv-grade-table tr:nth-child(even){
+    background:rgba(255,255,255,.02);
+}
+
+.cv-grade-table tr:hover{
+    background:rgba(79,255,210,.05);
+}
+
+.cv-grade-table td:last-child{
+    width:120px;
+    text-align:center;
+    font-weight:700;
+    color:#4fffd2;
 }
 
 /* ==========================================
@@ -2456,28 +2669,19 @@ section {
 }
 
 /* Button styling matching portfolio aesthetic */
-.cv-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 24px;
-    background: rgba(79, 255, 210, 0.08);
-    color: #4fffd2;
-    border: 1px solid rgba(79, 255, 210, 0.3);
-    border-radius: 10px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    text-decoration: none;
-    white-space: nowrap;
+.cv-btn{
+
+    transition:
+        .3s,
+        box-shadow .3s;
+
 }
 
-.cv-button:hover {
-    background: #4fffd2;
-    color: #0d0e15;
-    box-shadow: 0 0 18px rgba(79, 255, 210, 0.35);
-    transform: translateY(-2px);
+.cv-btn:hover{
+
+    transform:
+        translateY(-3px);
+
 }
 
 /* Responsive adjustment for mobile screens (< 700px) */
@@ -2655,4 +2859,92 @@ section {
     background: rgba(79, 255, 210, 0.12) !important;
     border-color: rgba(79, 255, 210, 0.3) !important;
     color: #ffffff !important;
+}
+
+/* ---------- Academic Results Table ---------- */
+
+.cv-results-table{
+    width:100%;
+    border-collapse:separate;
+    border-spacing:0;
+    overflow:hidden;
+    border-radius:12px;
+}
+
+.cv-results-table th,
+.cv-results-table td{
+    border-right:1px solid rgba(255,255,255,.08);
+}
+
+.cv-results-table th:last-child,
+.cv-results-table td:last-child{
+    border-right:none;
+}
+
+.cv-results-table tbody td{
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.cv-results-table tbody tr:last-child td{
+    border-bottom:none;
+}
+
+/* ---------- Overall Grading Table ---------- */
+
+.cv-grade-table{
+    width:100%;
+    border-collapse:separate;
+    border-spacing:0;
+    overflow:hidden;
+    border-radius:12px;
+}
+
+.cv-grade-table th,
+.cv-grade-table td{
+    border-right:1px solid rgba(255,255,255,.08);
+}
+
+.cv-grade-table th:last-child,
+.cv-grade-table td:last-child{
+    border-right:none;
+}
+
+.cv-grade-table tbody td{
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.cv-grade-table tbody tr:last-child td{
+    border-bottom:none;
+}
+
+/* Header separators */
+
+.cv-results-table thead th{
+    border-right:1px solid rgba(255,255,255,.18);
+}
+
+.cv-results-table thead th:last-child{
+    border-right:none;
+}
+
+/* Between Half-Yearly and Annual */
+
+.cv-results-table thead tr:first-child th:nth-child(2){
+    border-right:2px solid rgba(255,255,255,.28);
+}
+
+.cv-results-table thead tr:last-child th{
+    border-right:1px solid rgba(255,255,255,.15);
+}
+
+.cv-results-table thead tr:last-child th:last-child{
+    border-right:none;
+}
+
+.cv-results-table thead th{
+    box-shadow: inset -1px 0 rgba(255,255,255,.18);
+}
+
+.cv-results-table thead th:last-child{
+    box-shadow:none;
 }

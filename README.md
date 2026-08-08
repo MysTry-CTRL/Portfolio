@@ -1,4 +1,3 @@
-cat <<'EOF' > README.md
 <div align="center">
 
 # ⚡ A.B.I.R | Beyond Ordinary
@@ -8,6 +7,7 @@ cat <<'EOF' > README.md
 [![Version](https://img.shields.io/badge/Release-v9.0-4fffd2?style=for-the-badge&logo=github)](https://github.com/MysTry-CTRL)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
 [![Built With](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20JS-orange?style=for-the-badge)](https://developer.mozilla.org/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/539c1166-1390-4137-8fce-db0078a3a17c/deploy-status)](https://app.netlify.com/projects/colorizetext/deploys)
 
 </div>
 
@@ -182,5 +182,3 @@ Edit `site.webmanifest`:
 
 - GitHub: https://github.com/MysTry-CTRL
 - Portfolio: Live Showcase
-
-EOF

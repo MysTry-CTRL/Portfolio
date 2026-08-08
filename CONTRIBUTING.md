@@ -51,3 +51,4 @@ If you'd like to contribute code:
 2. Create a new branch for your changes:
 
 ```bash
+git checkout -b feature/your-feature

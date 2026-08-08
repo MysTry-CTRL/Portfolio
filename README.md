@@ -5,13 +5,11 @@
 **A sleek, ultra-responsive, glassmorphic portfolio & client service web platform.**
 
 [![Release](https://img.shields.io/badge/Release-v1.0-8b5cf6?style=for-the-badge\&logo=github\&logoColor=white)](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY)
-[![License](https://img.shields.io/badge/License-MIT-6366f1?style=for-the-badge\&logo=opensourceinitiative\&logoColor=white)](LICENSE)
-[![HTML5](https://img.shields.io/badge/HTML5-ea66ff?style=for-the-badge\&logo=html5\&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/CSS3-8b5cf6?style=for-the-badge\&logo=css3\&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-6366f1?style=for-the-badge\&logo=javascript\&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Firebase](https://img.shields.io/badge/Firebase-a855f7?style=for-the-badge\&logo=firebase\&logoColor=white)](https://firebase.google.com/)
-[![Netlify](https://img.shields.io/badge/Deployed%20on-Netlify-7c3aed?style=for-the-badge\&logo=netlify\&logoColor=white)](https://www.netlify.com/)
-![Profile Views](https://komarev.com/ghpvc/?username=YOUR_USERNAME\&style=for-the-badge\&color=8b5cf6)
+[![Stack](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20JavaScript-a855f7?style=for-the-badge)](https://developer.mozilla.org/)
+[![Firebase](https://img.shields.io/badge/Backend-Firebase-6366f1?style=for-the-badge\&logo=firebase\&logoColor=white)](https://firebase.google.com/)
+[![Netlify](https://img.shields.io/badge/Live-Netlify-7c3aed?style=for-the-badge\&logo=netlify\&logoColor=white)](https://www.netlify.com/)
+![Views](https://komarev.com/ghpvc/?username=YOUR_USERNAME\&style=for-the-badge\&color=8b5cf6)
+
 
 
 </div>

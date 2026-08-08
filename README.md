@@ -8,7 +8,7 @@
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
 [![Built With](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20JS-orange?style=for-the-badge)](https://developer.mozilla.org/)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/539c1166-1390-4137-8fce-db0078a3a17c/deploy-status)](https://app.netlify.com/projects/colorizetext/deploys)
-![Profile Views](https://komarev.com/ghpvc/?username=YOUR_USERNAME)
+![Profile Views](https://komarev.com/ghpvc/?username=MysTry-CTRL)
 
 </div>
 

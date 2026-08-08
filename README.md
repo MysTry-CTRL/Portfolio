@@ -4,11 +4,15 @@
 
 **A sleek, ultra-responsive, glassmorphic portfolio & client service web platform.**
 
-[![Version](https://img.shields.io/badge/Release-v9.0-4fffd2?style=for-the-badge&logo=github)](https://github.com/MysTry-CTRL)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
-[![Built With](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20JS-orange?style=for-the-badge)](https://developer.mozilla.org/)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/539c1166-1390-4137-8fce-db0078a3a17c/deploy-status)](https://app.netlify.com/projects/colorizetext/deploys)
-![Profile Views](https://komarev.com/ghpvc/?username=MysTry-CTRL)
+[![Release](https://img.shields.io/badge/Release-v1.0-8b5cf6?style=for-the-badge\&logo=github\&logoColor=white)](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY)
+[![License](https://img.shields.io/badge/License-MIT-6366f1?style=for-the-badge\&logo=opensourceinitiative\&logoColor=white)](LICENSE)
+[![HTML5](https://img.shields.io/badge/HTML5-ea66ff?style=for-the-badge\&logo=html5\&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-8b5cf6?style=for-the-badge\&logo=css3\&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-6366f1?style=for-the-badge\&logo=javascript\&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Firebase](https://img.shields.io/badge/Firebase-a855f7?style=for-the-badge\&logo=firebase\&logoColor=white)](https://firebase.google.com/)
+[![Netlify](https://img.shields.io/badge/Deployed%20on-Netlify-7c3aed?style=for-the-badge\&logo=netlify\&logoColor=white)](https://www.netlify.com/)
+![Profile Views](https://komarev.com/ghpvc/?username=YOUR_USERNAME\&style=for-the-badge\&color=8b5cf6)
+
 
 </div>
 

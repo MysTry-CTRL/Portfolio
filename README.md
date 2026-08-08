@@ -4,12 +4,12 @@
 
 **A sleek, ultra-responsive, glassmorphic portfolio & client service web platform.**
 
-[![Release](https://img.shields.io/badge/Release-v1.0-8b5cf6?style=for-the-badge\&logo=github\&logoColor=white)](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY)
-[![Stack](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20JavaScript-a855f7?style=for-the-badge)](https://developer.mozilla.org/)
-[![Firebase](https://img.shields.io/badge/Backend-Firebase-6366f1?style=for-the-badge\&logo=firebase\&logoColor=white)](https://firebase.google.com/)
-[![Netlify](https://img.shields.io/badge/Live-Netlify-7c3aed?style=for-the-badge\&logo=netlify\&logoColor=white)](https://www.netlify.com/)
-![Views](https://komarev.com/ghpvc/?username=YOUR_USERNAME\&style=for-the-badge\&color=8b5cf6)
-
+[![Release](https://img.shields.io/badge/Release-v1.0-20E6C7?style=for-the-badge&logo=github&logoColor=white)](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY)
+[![License](https://img.shields.io/badge/License-MIT-0F9F8F?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
+[![Stack](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20JavaScript-00CDB8?style=for-the-badge)](https://developer.mozilla.org/)
+[![Firebase](https://img.shields.io/badge/Backend-Firebase-14B8A6?style=for-the-badge&logo=firebase&logoColor=white)](https://firebase.google.com/)
+[![Netlify](https://img.shields.io/badge/Deployed%20on-Netlify-0B8F7A?style=for-the-badge&logo=netlify&logoColor=white)](https://www.netlify.com/)
+![Views](https://komarev.com/ghpvc/?username=MysTry-CTRL&style=for-the-badge&color=20E6C7)
 
 
 </div>
